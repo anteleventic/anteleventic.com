@@ -1,0 +1,103 @@
+{
+  "name": "Ante Leventic",
+  "role": "Full-Stack-Entwickler",
+  "tabs": {
+    "about": "über.tsx",
+    "projects": "projekte.tsx",
+    "photography": "fotografie.tsx",
+    "skills": "fähigkeiten.tsx"
+  },
+  "about": {
+    "title": "Über mich",
+    "content": "Ich bin ein leidenschaftlicher Full-Stack-Entwickler mit Expertise in modernen Webtechnologien. Ich liebe es, schöne, funktionale Anwendungen zu erstellen, die reale Probleme lösen. Mit jahrelanger Erfahrung in Frontend- und Backend-Entwicklung erwecke ich Ideen durch sauberen Code und intuitives Design zum Leben."
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "viewDetails": "Details anzeigen",
+    "backToProjects": "Zurück zu Projekten",
+    "keyFeatures": "Hauptfunktionen",
+    "viewOnGithub": "Auf GitHub anzeigen",
+    "viewLive": "Live-Demo anzeigen",
+    "items": [
+      {
+        "title": "KI-Aufgabenmanager",
+        "description": "Intelligentes Aufgabenverwaltungssystem mit maschinellen Lernalgorithmen zur automatischen Priorisierung.",
+        "longDescription": "Eine umfassende Aufgabenverwaltungsplattform, die fortschrittliche maschinelle Lernalgorithmen verwendet, um Aufgaben automatisch nach Fristen, Wichtigkeit und Nutzerverhaltensmustern zu priorisieren. Funktionen umfassen intelligente Benachrichtigungen, kollaborative Arbeitsbereiche und detaillierte Analysen.",
+        "features": [
+          "Intelligente Aufgabenpriorisierung",
+          "Kollaborative Arbeitsbereiche",
+          "Echtzeit-Benachrichtigungen",
+          "Analyse-Dashboard"
+        ]
+      },
+      {
+        "title": "Portfolio-Generator",
+        "description": "Erstelle in wenigen Minuten beeindruckende Portfolio-Websites mit anpassbaren Vorlagen und Drag-and-Drop-Oberfläche.",
+        "longDescription": "Ein intuitiver Portfolio-Builder, der es Kreativen ermöglicht, schöne, responsive Portfolio-Websites ohne Code zu erstellen. Bietet eine Drag-and-Drop-Oberfläche, anpassbare Vorlagen und automatische Optimierung für alle Geräte.",
+        "features": [
+          "Drag-and-Drop-Builder",
+          "Responsive Vorlagen",
+          "Eigene Domains",
+          "SEO-Optimierung"
+        ]
+      },
+      {
+        "title": "Social-Analytics-Dashboard",
+        "description": "Echtzeit-Social-Media-Analyseplattform mit umfassenden Einblicken und automatisierten Berichten.",
+        "longDescription": "Eine leistungsstarke Analyseplattform, die Echtzeit-Einblicke in die Social-Media-Performance über mehrere Plattformen hinweg bietet. Umfasst automatisierte Berichterstattung, Zielgruppenanalyse und Engagement-Tracking.",
+        "features": [
+          "Multi-Plattform-Integration",
+          "Echtzeit-Analysen",
+          "Automatisierte Berichte",
+          "Zielgruppen-Einblicke"
+        ]
+      },
+      {
+        "title": "E-Commerce-Plattform",
+        "description": "Voll ausgestattete Online-Shopping-Plattform mit Zahlungsintegration und Lagerverwaltung.",
+        "longDescription": "Eine vollständige E-Commerce-Lösung mit sicherer Zahlungsabwicklung, Lagerverwaltung und Kundenbeziehungs-Tools. Entwickelt für Skalierbarkeit und Leistung mit modernen Webtechnologien.",
+        "features": [
+          "Sichere Zahlungen",
+          "Lagerverwaltung",
+          "Kundenportal",
+          "Bestellverfolgung"
+        ]
+      }
+    ]
+  },
+  "photography": {
+    "title": "Fotografie",
+    "subtitle": "Momente durch die Linse einfangen"
+  },
+  "skills": {
+    "title": "Technische Fähigkeiten",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Werkzeuge & Sonstiges"
+    },
+    "items": {
+      "frontend": [
+        "React & Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vue.js",
+        "HTML5 & CSS3"
+      ],
+      "backend": [
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+        "MongoDB",
+        "REST APIs"
+      ],
+      "tools": [
+        "Git & GitHub",
+        "Docker",
+        "VS Code",
+        "Figma",
+        "Agile/Scrum"
+      ]
+    }
+  }
+}

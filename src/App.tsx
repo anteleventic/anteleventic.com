@@ -1,12 +1,13 @@
 import { Instagram, Youtube, Linkedin, Mail, Github, Sun, Moon, Languages } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { TranslationProvider, useTranslation } from './hooks/useTranslation';
 
-function App() {
+function AppContent({ language, setLanguage }: { language: 'en' | 'de', setLanguage: (lang: 'en' | 'de') => void }) {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('about');
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [language, setLanguage] = useState<'en' | 'de'>('en');
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   const handleTabChange = (tab: string) => {
@@ -37,48 +38,19 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeTab, selectedProject]);
 
-  const projects = [
-    {
-      id: 1,
-      title: 'AI Task Manager',
-      description: 'Intelligent task management system powered by machine learning algorithms for automatic prioritization.',
-      longDescription: 'A comprehensive task management platform that uses advanced machine learning algorithms to automatically prioritize tasks based on deadlines, importance, and user behavior patterns. Features include smart notifications, collaborative workspaces, and detailed analytics.',
-      tags: ['React', 'Python', 'TensorFlow'],
-      github: 'https://github.com/example/ai-task-manager',
-      live: 'https://ai-task-manager.demo',
-      features: ['Smart task prioritization', 'Collaborative workspaces', 'Real-time notifications', 'Analytics dashboard']
-    },
-    {
-      id: 2,
-      title: 'Portfolio Generator',
-      description: 'Create stunning portfolio websites in minutes with customizable templates and drag-and-drop interface.',
-      longDescription: 'An intuitive portfolio builder that empowers creators to build beautiful, responsive portfolio websites without writing code. Features a drag-and-drop interface, customizable templates, and automatic optimization for all devices.',
-      tags: ['Next.js', 'TypeScript', 'Tailwind'],
-      github: 'https://github.com/example/portfolio-generator',
-      live: 'https://portfolio-gen.demo',
-      features: ['Drag-and-drop builder', 'Responsive templates', 'Custom domains', 'SEO optimization']
-    },
-    {
-      id: 3,
-      title: 'Social Analytics Dashboard',
-      description: 'Real-time social media analytics platform with comprehensive insights and automated reporting.',
-      longDescription: 'A powerful analytics platform that provides real-time insights into social media performance across multiple platforms. Includes automated reporting, audience analysis, and engagement tracking.',
-      tags: ['Vue.js', 'Node.js', 'MongoDB'],
-      github: 'https://github.com/example/social-analytics',
-      live: 'https://social-analytics.demo',
-      features: ['Multi-platform integration', 'Real-time analytics', 'Automated reports', 'Audience insights']
-    },
-    {
-      id: 4,
-      title: 'E-Commerce Platform',
-      description: 'Full-featured online shopping platform with payment integration and inventory management.',
-      longDescription: 'A complete e-commerce solution with secure payment processing, inventory management, and customer relationship tools. Built for scalability and performance with modern web technologies.',
-      tags: ['React', 'Stripe', 'PostgreSQL'],
-      github: 'https://github.com/example/ecommerce',
-      live: 'https://ecommerce.demo',
-      features: ['Secure payments', 'Inventory management', 'Customer portal', 'Order tracking']
-    }
-  ];
+  const projects = t.projects.items.map((project, index) => ({
+    id: index + 1,
+    title: project.title,
+    description: project.description,
+    longDescription: project.longDescription,
+    tags: index === 0 ? ['React', 'Python', 'TensorFlow'] :
+          index === 1 ? ['Next.js', 'TypeScript', 'Tailwind'] :
+          index === 2 ? ['Vue.js', 'Node.js', 'MongoDB'] :
+          ['React', 'Stripe', 'PostgreSQL'],
+    github: `https://github.com/example/${project.title.toLowerCase().replace(/\s+/g, '-')}`,
+    live: `https://${project.title.toLowerCase().replace(/\s+/g, '-')}.demo`,
+    features: project.features
+  }));
   return (
     <div className={`relative min-h-screen w-full overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-950 via-gray-900 to-custom-brown' : 'bg-gradient-to-br from-gray-100 via-slate-50 to-gray-100'} font-mono transition-colors duration-500`}>
       <div
@@ -202,7 +174,7 @@ function App() {
             </div>
 
             <h1 className={`text-transparent bg-clip-text ${isDarkMode ? 'bg-gradient-to-r from-orange-200 via-amber-100 to-orange-300' : 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900'} text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight mb-6 transition-colors duration-500`}>
-              Ante Leventic
+              {t.name}
             </h1>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6">
@@ -288,7 +260,7 @@ function App() {
                         : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
                   }`}
                 >
-                  <span className="relative z-10">about.tsx</span>
+                  <span className="relative z-10">{t.tabs.about}</span>
                   {activeTab === 'about' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
                 <button
@@ -303,7 +275,7 @@ function App() {
                         : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
                   }`}
                 >
-                  <span className="relative z-10">projects.tsx</span>
+                  <span className="relative z-10">{t.tabs.projects}</span>
                   {activeTab === 'projects' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
                 <button
@@ -318,7 +290,7 @@ function App() {
                         : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
                   }`}
                 >
-                  <span className="relative z-10">photos.tsx</span>
+                  <span className="relative z-10">{t.tabs.photography}</span>
                   {activeTab === 'photography' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
                 <button
@@ -333,7 +305,7 @@ function App() {
                         : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
                   }`}
                 >
-                  <span className="relative z-10">skills.tsx</span>
+                  <span className="relative z-10">{t.tabs.skills}</span>
                   {activeTab === 'skills' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
               </div>
@@ -489,7 +461,7 @@ function App() {
                 onClick={handleBackToProjects}
                 className={`mb-12 ${isDarkMode ? 'text-orange-400 hover:text-orange-300' : 'text-slate-700 hover:text-slate-900'} transition-all duration-200 flex items-center gap-2 group hover:scale-105 animate-fade-in`}
               >
-                <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Projects
+                <span className="group-hover:-translate-x-1 transition-transform">←</span> {t.projects.backToProjects}
               </button>
             {projects.filter(p => p.id === selectedProject).map((project) => (
               <div key={project.id} className="space-y-6">
@@ -523,7 +495,7 @@ function App() {
                   <p className={`${isDarkMode ? 'text-orange-200/80' : 'text-slate-700'} text-base leading-relaxed mb-6`}>{project.longDescription}</p>
 
                   <div>
-                    <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-4`}>Key Features</h3>
+                    <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-4`}>{t.projects.keyFeatures}</h3>
                     <ul className="space-y-2 mb-8">
                       {project.features.map((feature, index) => (
                         <li key={index} className="flex items-start gap-3">
@@ -541,7 +513,7 @@ function App() {
                       rel="noopener noreferrer"
                       className={`px-6 py-2.5 ${isDarkMode ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-gray-900 hover:shadow-orange-500/30' : 'bg-[#273447] text-white hover:shadow-[#273447]/30'} font-bold text-sm rounded-lg hover:shadow-lg transition-all`}
                     >
-                      View on GitHub
+                      {t.projects.viewOnGithub}
                     </a>
                     <a
                       href={project.live}
@@ -549,7 +521,7 @@ function App() {
                       rel="noopener noreferrer"
                       className={`px-6 py-2.5 ${isDarkMode ? 'bg-orange-500/10 text-orange-300 border-orange-500/20 hover:bg-orange-500/20 hover:border-orange-400/40' : 'bg-slate-100 text-slate-800 border-slate-300 hover:bg-slate-200 hover:border-slate-400'} font-bold text-sm rounded-lg border transition-all`}
                     >
-                      Live Demo
+                      {t.projects.viewLive}
                     </a>
                   </div>
                 </div>
@@ -838,6 +810,16 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  const [language, setLanguage] = useState<'en' | 'de'>('en');
+
+  return (
+    <TranslationProvider language={language}>
+      <AppContent language={language} setLanguage={setLanguage} />
+    </TranslationProvider>
   );
 }
 
