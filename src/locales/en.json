@@ -9,7 +9,33 @@
   },
   "about": {
     "title": "About Me",
-    "content": "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating beautiful, functional applications that solve real-world problems. With years of experience in both frontend and backend development, I bring ideas to life through clean code and intuitive design."
+    "content": "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating beautiful, functional applications that solve real-world problems. With years of experience in both frontend and backend development, I bring ideas to life through clean code and intuitive design.",
+    "timeline": [
+      {
+        "period": "2024 - Present",
+        "title": "Senior Full-Stack Developer & AI Specialist",
+        "company": "Freelance",
+        "description": "Leading development of innovative AI-powered applications and web solutions. Specializing in React, TypeScript, and machine learning integration for enterprise clients."
+      },
+      {
+        "period": "2020 - 2024",
+        "title": "Lead Frontend Developer",
+        "company": "Tech Innovations Inc.",
+        "description": "Architected and built scalable web applications serving millions of users. Led a team of 5 developers in delivering high-performance React applications."
+      },
+      {
+        "period": "2017 - 2020",
+        "title": "Full-Stack Developer",
+        "company": "Digital Solutions Ltd.",
+        "description": "Developed end-to-end web applications using modern JavaScript frameworks. Collaborated with design teams to create intuitive user experiences."
+      },
+      {
+        "period": "2015 - 2017",
+        "title": "Junior Web Developer",
+        "company": "StartUp Labs",
+        "description": "Contributed to various web development projects, gaining hands-on experience with HTML, CSS, JavaScript, and basic backend technologies."
+      }
+    ]
   },
   "projects": {
     "title": "My Projects",

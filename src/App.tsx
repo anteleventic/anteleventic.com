@@ -341,71 +341,47 @@ function AppContent({ language, setLanguage }: { language: 'en' | 'de', setLangu
             <div className="space-y-12 relative animate-fade-in">
               <div className={`absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b ${isDarkMode ? 'from-orange-500/30 via-orange-500/20' : 'from-slate-400/40 via-slate-400/20'} to-transparent md:transform md:-translate-x-1/2`}></div>
 
-              <div className="flex group relative animate-slide-in-left animate-delay-100">
-                <div className="hidden md:block flex-1 pb-8 text-right pr-12">
-                  <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>2024 - Present</div>
-                  <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>Senior Full-Stack Developer & AI Specialist</h3>
-                  <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>Freelance</p>
-                  <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>Leading development of innovative AI-powered applications and web solutions. Specializing in React, TypeScript, and machine learning integration for enterprise clients.</p>
-                </div>
-                <div className="absolute left-[30px] md:left-1/2 top-0 md:transform md:-translate-x-1/2 z-10">
-                  <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-orange-500/30 border-2 border-orange-400/50 group-hover:bg-orange-400/50 shadow-lg shadow-orange-500/30' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20'} group-hover:scale-125 transition-all`}></div>
-                </div>
-                <div className="flex-1 pb-8 pl-16 md:pl-0">
-                  <div className="md:hidden">
-                    <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>2024 - Present</div>
-                    <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>Senior Full-Stack Developer & AI Specialist</h3>
-                    <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>Freelance</p>
-                    <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>Leading development of innovative AI-powered applications and web solutions. Specializing in React, TypeScript, and machine learning integration for enterprise clients.</p>
+              {t.about.timeline.map((item, index) => {
+                const isLeft = index % 2 === 0;
+                const isLast = index === t.about.timeline.length - 1;
+                const animationClass = isLeft ? 'animate-slide-in-left' : 'animate-slide-in-right';
+                const delayClass = `animate-delay-${(index + 1) * 100}`;
+
+                return (
+                  <div key={index} className={`flex group relative ${animationClass} ${delayClass}`}>
+                    {isLeft && (
+                      <div className="hidden md:block flex-1 pb-8 text-right pr-12">
+                        <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.period}</div>
+                        <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>{item.title}</h3>
+                        <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.company}</p>
+                        <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>{item.description}</p>
+                      </div>
+                    )}
+                    {!isLeft && <div className="hidden md:block flex-1 pb-8"></div>}
+                    <div className="absolute left-[30px] md:left-1/2 top-0 md:transform md:-translate-x-1/2 z-10">
+                      <div className={`w-4 h-4 rounded-full ${isLast ? (isDarkMode ? 'bg-white/20 border-2 border-white/40 group-hover:bg-white/40' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20') : (isDarkMode ? 'bg-orange-500/30 border-2 border-orange-400/50 group-hover:bg-orange-400/50 shadow-lg shadow-orange-500/30' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20')} group-hover:scale-125 transition-all`}></div>
+                    </div>
+                    <div className={`flex-1 pb-8 ${isLeft ? 'pl-16 md:pl-0' : 'pl-16 md:pl-12'}`}>
+                      {isLeft && (
+                        <div className="md:hidden">
+                          <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.period}</div>
+                          <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>{item.title}</h3>
+                          <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.company}</p>
+                          <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>{item.description}</p>
+                        </div>
+                      )}
+                      {!isLeft && (
+                        <div>
+                          <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.period}</div>
+                          <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>{item.title}</h3>
+                          <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.company}</p>
+                          <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>{item.description}</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="flex group relative animate-slide-in-right animate-delay-200">
-                <div className="hidden md:block flex-1 pb-8"></div>
-                <div className="absolute left-[30px] md:left-1/2 top-0 md:transform md:-translate-x-1/2 z-10">
-                  <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-orange-500/30 border-2 border-orange-400/50 group-hover:bg-orange-400/50 shadow-lg shadow-orange-500/30' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20'} group-hover:scale-125 transition-all`}></div>
-                </div>
-                <div className="flex-1 pb-8 pl-16 md:pl-12">
-                  <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>2020 - 2024</div>
-                  <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>Lead Frontend Developer</h3>
-                  <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>Tech Innovations Inc.</p>
-                  <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>Architected and built scalable web applications serving millions of users. Led a team of 5 developers in delivering high-performance React applications.</p>
-                </div>
-              </div>
-
-              <div className="flex group relative animate-slide-in-left animate-delay-300">
-                <div className="hidden md:block flex-1 pb-8 text-right pr-12">
-                  <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>2017 - 2020</div>
-                  <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>Full-Stack Developer</h3>
-                  <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>Digital Solutions Ltd.</p>
-                  <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>Developed end-to-end web applications using modern JavaScript frameworks. Collaborated with design teams to create intuitive user experiences.</p>
-                </div>
-                <div className="absolute left-[30px] md:left-1/2 top-0 md:transform md:-translate-x-1/2 z-10">
-                  <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-orange-500/30 border-2 border-orange-400/50 group-hover:bg-orange-400/50 shadow-lg shadow-orange-500/30' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20'} group-hover:scale-125 transition-all`}></div>
-                </div>
-                <div className="flex-1 pb-8 pl-16 md:pl-0">
-                  <div className="md:hidden">
-                    <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>2017 - 2020</div>
-                    <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>Full-Stack Developer</h3>
-                    <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>Digital Solutions Ltd.</p>
-                    <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>Developed end-to-end web applications using modern JavaScript frameworks. Collaborated with design teams to create intuitive user experiences.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex group relative animate-slide-in-right animate-delay-400">
-                <div className="hidden md:block flex-1 pb-8"></div>
-                <div className="absolute left-[30px] md:left-1/2 top-0 md:transform md:-translate-x-1/2 z-10">
-                  <div className={`w-4 h-4 rounded-full ${isDarkMode ? 'bg-white/20 border-2 border-white/40 group-hover:bg-white/40' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20'} group-hover:scale-125 transition-all`}></div>
-                </div>
-                <div className="flex-1 pb-8 pl-16 md:pl-12">
-                  <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>2015 - 2017</div>
-                  <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>Junior Developer</h3>
-                  <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>StartUp Labs</p>
-                  <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>Started my professional journey building responsive websites and learning modern web development practices. Contributed to multiple successful product launches.</p>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>

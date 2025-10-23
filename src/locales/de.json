@@ -9,7 +9,33 @@
   },
   "about": {
     "title": "Über mich",
-    "content": "Ich bin ein leidenschaftlicher Full-Stack-Entwickler mit Expertise in modernen Webtechnologien. Ich liebe es, schöne, funktionale Anwendungen zu erstellen, die reale Probleme lösen. Mit jahrelanger Erfahrung in Frontend- und Backend-Entwicklung erwecke ich Ideen durch sauberen Code und intuitives Design zum Leben."
+    "content": "Ich bin ein leidenschaftlicher Full-Stack-Entwickler mit Expertise in modernen Webtechnologien. Ich liebe es, schöne, funktionale Anwendungen zu erstellen, die reale Probleme lösen. Mit jahrelanger Erfahrung in Frontend- und Backend-Entwicklung erwecke ich Ideen durch sauberen Code und intuitives Design zum Leben.",
+    "timeline": [
+      {
+        "period": "2024 - Heute",
+        "title": "Senior Full-Stack-Entwickler & KI-Spezialist",
+        "company": "Freiberuflich",
+        "description": "Leitung der Entwicklung innovativer KI-gestützter Anwendungen und Weblösungen. Spezialisierung auf React, TypeScript und maschinelles Lernen für Unternehmenskunden."
+      },
+      {
+        "period": "2020 - 2024",
+        "title": "Leitender Frontend-Entwickler",
+        "company": "Tech Innovations Inc.",
+        "description": "Architektur und Aufbau skalierbarer Webanwendungen für Millionen von Nutzern. Leitung eines Teams von 5 Entwicklern bei der Bereitstellung hochperformanter React-Anwendungen."
+      },
+      {
+        "period": "2017 - 2020",
+        "title": "Full-Stack-Entwickler",
+        "company": "Digital Solutions Ltd.",
+        "description": "Entwicklung von End-to-End-Webanwendungen mit modernen JavaScript-Frameworks. Zusammenarbeit mit Design-Teams zur Schaffung intuitiver Benutzererlebnisse."
+      },
+      {
+        "period": "2015 - 2017",
+        "title": "Junior Webentwickler",
+        "company": "StartUp Labs",
+        "description": "Mitarbeit an verschiedenen Webentwicklungsprojekten, praktische Erfahrung mit HTML, CSS, JavaScript und grundlegenden Backend-Technologien."
+      }
+    ]
   },
   "projects": {
     "title": "Meine Projekte",
