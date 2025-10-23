@@ -1,6 +1,16 @@
 {
   "name": "Ante Leventic",
   "role": "Full-Stack-Entwickler",
+  "hero": {
+    "description": "Wenn ich nicht gerade programmiere, die KI-Welt erkunde oder vibes codend an meinem nächsten \"passiven\" App-Projekt arbeite, bin ich wahrscheinlich mit einer Kamera unterwegs und versuche wie ein Profi-Fotograf auszusehen—oder auf meinem Motorrad, auf der Jagd nach der besten Todeskurve.",
+    "yearsExperience": "Jahre Erfahrung",
+    "projects": "Projekte"
+  },
+  "footer": {
+    "copyright": "© 2024 Ante Leventic. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen"
+  },
   "tabs": {
     "about": "über.tsx",
     "projects": "projekte.tsx",

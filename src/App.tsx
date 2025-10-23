@@ -316,16 +316,16 @@ function AppContent({ language, setLanguage }: { language: 'en' | 'de', setLangu
             <div className={`hidden lg:block h-px w-12 bg-gradient-to-r ${isDarkMode ? 'from-orange-500/50' : 'from-slate-400/50'} to-transparent mt-2`}></div>
             <div className="w-full max-w-2xl lg:max-w-xs text-center lg:text-left px-4 lg:px-0">
               <p className={`${isDarkMode ? 'text-orange-100/80' : 'text-slate-700'} text-sm sm:text-base leading-relaxed mb-6 lg:mb-8 transition-colors duration-500`}>
-                When I'm not coding, exploring the AI World or vibe coding my next "passive" App project, I'm probably behind a camera trying to look like a pro photographer—or out on my motorcycle, chasing the best death curve.
+                {t.hero.description}
               </p>
               <div className="hidden lg:flex justify-center lg:justify-start gap-6 sm:gap-8 mb-8">
                 <div className="group cursor-default">
                   <div className={`text-transparent bg-clip-text ${isDarkMode ? 'bg-gradient-to-br from-orange-300 to-amber-400' : 'bg-gradient-to-br from-slate-800 to-slate-700'} text-3xl sm:text-4xl font-black mb-1 group-hover:scale-110 transition-transform`}>10+</div>
-                  <div className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-xs uppercase tracking-[0.2em]`}>Years Experience</div>
+                  <div className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-xs uppercase tracking-[0.2em]`}>{t.hero.yearsExperience}</div>
                 </div>
                 <div className="group cursor-default">
                   <div className={`text-transparent bg-clip-text ${isDarkMode ? 'bg-gradient-to-br from-orange-300 to-amber-400' : 'bg-gradient-to-br from-slate-800 to-slate-700'} text-3xl sm:text-4xl font-black mb-1 group-hover:scale-110 transition-transform`}>50+</div>
-                  <div className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-xs uppercase tracking-[0.2em]`}>Projects</div>
+                  <div className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-xs uppercase tracking-[0.2em]`}>{t.hero.projects}</div>
                 </div>
               </div>
             </div>
@@ -775,11 +775,11 @@ function AppContent({ language, setLanguage }: { language: 'en' | 'de', setLangu
           <div className={`border-t ${isDarkMode ? 'border-orange-500/20' : 'border-slate-300'} pt-8`}>
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className={`${isDarkMode ? 'text-orange-300/50' : 'text-slate-600'} text-sm font-mono`}>
-                © 2024 Ante Leventic. All rights reserved.
+                {t.footer.copyright}
               </p>
               <div className="flex items-center gap-6">
-                <button onClick={() => handleTabChange('privacy')} className={`${isDarkMode ? 'text-orange-300/50 hover:text-orange-200' : 'text-slate-600 hover:text-slate-900'} transition-all duration-200 text-sm font-mono hover:translate-x-1`}>Privacy</button>
-                <button onClick={() => handleTabChange('terms')} className={`${isDarkMode ? 'text-orange-300/50 hover:text-orange-200' : 'text-slate-600 hover:text-slate-900'} transition-all duration-200 text-sm font-mono hover:translate-x-1`}>Terms</button>
+                <button onClick={() => handleTabChange('privacy')} className={`${isDarkMode ? 'text-orange-300/50 hover:text-orange-200' : 'text-slate-600 hover:text-slate-900'} transition-all duration-200 text-sm font-mono hover:translate-x-1`}>{t.footer.privacy}</button>
+                <button onClick={() => handleTabChange('terms')} className={`${isDarkMode ? 'text-orange-300/50 hover:text-orange-200' : 'text-slate-600 hover:text-slate-900'} transition-all duration-200 text-sm font-mono hover:translate-x-1`}>{t.footer.terms}</button>
               </div>
             </div>
           </div>
