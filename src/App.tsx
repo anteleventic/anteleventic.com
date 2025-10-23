@@ -146,7 +146,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               <img
                 src="https://profile-images.xing.com/images/b4547c89e9a533fb14c3c3ab66c76d66-3/ante-leventic.256x256.jpg"
                 alt="Ante Leventic"
-                className={`relative w-36 h-36 object-cover rounded-[18px] border-2 ${isDarkMode ? 'border-white/20' : 'border-[#273447]'} transform rotate-[-3deg]`}
+                className={`relative w-36 h-36 object-cover rounded-[18px] border-2 ${isDarkMode ? 'border-orange-500/60' : 'border-[#273447]'} transform rotate-[-3deg]`}
               />
             </div>
           </div>
@@ -158,7 +158,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 <img
                   src="https://profile-images.xing.com/images/b4547c89e9a533fb14c3c3ab66c76d66-3/ante-leventic.256x256.jpg"
                   alt="Ante Leventic"
-                  className={`relative w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-[18px] border-2 ${isDarkMode ? 'border-white/20' : 'border-[#273447]'} transform rotate-[-3deg]`}
+                  className={`relative w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-[18px] border-2 ${isDarkMode ? 'border-orange-500/60' : 'border-[#273447]'} transform rotate-[-3deg]`}
                 />
               </div>
             </div>
