@@ -2,13 +2,20 @@ import { Instagram, Youtube, Linkedin, Mail, Github, Sun, Moon, Languages } from
 import { useState, useEffect } from 'react';
 import { TranslationProvider, useTranslation } from './hooks/useTranslation';
 
-function AppContent({ language, setLanguage }: { language: 'en' | 'de', setLanguage: (lang: 'en' | 'de') => void }) {
+function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { language: 'en' | 'de', setLanguage: (lang: 'en' | 'de') => void, isDarkMode: boolean, setIsDarkMode: (value: boolean) => void }) {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('about');
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   const handleTabChange = (tab: string) => {
     setIsTransitioning(true);
@@ -790,11 +797,27 @@ function AppContent({ language, setLanguage }: { language: 'en' | 'de', setLangu
 }
 
 function App() {
-  const [language, setLanguage] = useState<'en' | 'de'>('en');
+  const [language, setLanguage] = useState<'en' | 'de'>(() => {
+    const savedLanguage = localStorage.getItem('language') as 'en' | 'de' | null;
+    if (savedLanguage) {
+      return savedLanguage;
+    }
+    const browserLanguage = navigator.language.toLowerCase();
+    return browserLanguage.startsWith('de') ? 'de' : 'en';
+  });
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark;
+  });
 
   return (
     <TranslationProvider language={language}>
-      <AppContent language={language} setLanguage={setLanguage} />
+      <AppContent language={language} setLanguage={setLanguage} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
     </TranslationProvider>
   );
 }
