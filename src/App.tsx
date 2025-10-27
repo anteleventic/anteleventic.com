@@ -334,7 +334,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       )}
 
       {activeTab === 'about' && (
-      <section id="about" className={`relative z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+      <section id="about" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
         <div className="w-full max-w-[1250px] mx-auto">
           <div className="w-full">
             <div className="space-y-12 relative animate-fade-in">
@@ -388,7 +388,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       )}
 
       {activeTab === 'projects' && !selectedProject && (
-      <section id="projects" className={`relative z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+      <section id="projects" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
         <div className="w-full max-w-[1250px] mx-auto">
           <div className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
@@ -417,7 +417,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'projects' && selectedProject && (
       <>
-        <section id="project-detail" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <section id="project-detail" className={`relative pt-32 z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <div className="w-full max-w-[1250px] mx-auto">
             <div className="w-full md:w-[80%] mx-auto">
               <button
@@ -497,7 +497,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       )}
 
       {activeTab === 'photography' && (
-      <section id="photography" className={`relative z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+      <section id="photography" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
         <div className="w-full max-w-[1250px] mx-auto">
           <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[150px] gap-3 animate-fade-in">
@@ -603,7 +603,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       )}
 
       {activeTab === 'skills' && (
-      <section id="skills" className={`relative z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+      <section id="skills" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
         <div className="w-full max-w-[1250px] mx-auto">
           <div className="w-full">
             <div className="flex flex-wrap gap-3 animate-fade-in">
