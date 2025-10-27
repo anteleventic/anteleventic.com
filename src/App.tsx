@@ -64,6 +64,19 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] ${isDarkMode ? 'bg-orange-500/5' : 'bg-slate-200/40'} rounded-full blur-3xl transition-colors duration-500`}></div>
       </div>
 
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: isDarkMode
+          ? 'radial-gradient(circle at 2px 2px, rgba(148, 163, 184, 0.08) 1px, transparent 0)'
+          : 'radial-gradient(circle at 2px 2px, rgba(148, 163, 184, 0.15) 1px, transparent 0)',
+        backgroundSize: '48px 48px',
+      }}></div>
+
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        <div className={`absolute top-20 right-[10%] w-96 h-0.5 ${isDarkMode ? 'bg-gradient-to-r from-transparent via-slate-700 to-transparent' : 'bg-gradient-to-r from-transparent via-slate-200 to-transparent'} rotate-12`}></div>
+        <div className={`absolute top-[40%] left-[5%] w-64 h-0.5 ${isDarkMode ? 'bg-gradient-to-r from-transparent via-slate-700 to-transparent' : 'bg-gradient-to-r from-transparent via-slate-200 to-transparent'} -rotate-12`}></div>
+        <div className={`absolute bottom-32 right-[15%] w-80 h-0.5 ${isDarkMode ? 'bg-gradient-to-r from-transparent via-slate-700 to-transparent' : 'bg-gradient-to-r from-transparent via-slate-200 to-transparent'} rotate-6`}></div>
+      </div>
+
       <div className="fixed top-8 left-0 right-0 z-50 flex justify-center px-6">
         <div className="w-full md:w-4/5 max-w-[1250px] flex justify-end gap-3">
           <div className="relative">
