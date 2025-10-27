@@ -310,7 +310,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         <div className="w-full max-w-[1250px] mx-auto">
           <div className="w-full">
             <div className="space-y-12 relative animate-fade-in">
-              <div className={`absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b ${isDarkMode ? 'from-orange-500/30 via-orange-500/20' : 'from-slate-400/40 via-slate-400/20'} to-transparent md:transform md:-translate-x-1/2`}></div>
+              <div className={`absolute left-8 md:left-1/2 top-0 bottom-0 w-px ${isDarkMode ? 'bg-slate-800' : 'bg-slate-200'} md:transform md:-translate-x-1/2`}></div>
 
               {t.about.timeline.map((item, index) => {
                 const isLeft = index % 2 === 0;
@@ -322,31 +322,31 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                   <div key={index} className={`flex group relative ${animationClass} ${delayClass}`}>
                     {isLeft && (
                       <div className="hidden md:block flex-1 pb-8 text-right pr-12">
-                        <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.period}</div>
-                        <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>{item.title}</h3>
-                        <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.company}</p>
-                        <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>{item.description}</p>
+                        <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm mb-2 font-medium`}>{item.period}</div>
+                        <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{item.title}</h3>
+                        <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-2`}>{item.company}</p>
+                        <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}>{item.description}</p>
                       </div>
                     )}
                     {!isLeft && <div className="hidden md:block flex-1 pb-8"></div>}
                     <div className="absolute left-[30px] md:left-1/2 top-0 md:transform md:-translate-x-1/2 z-10">
-                      <div className={`w-4 h-4 rounded-full ${isLast ? (isDarkMode ? 'bg-white/20 border-2 border-white/40 group-hover:bg-white/40' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20') : (isDarkMode ? 'bg-orange-500/30 border-2 border-orange-400/50 group-hover:bg-orange-400/50 shadow-lg shadow-orange-500/30' : 'bg-slate-400/40 border-2 border-slate-500/60 group-hover:bg-slate-500/60 shadow-lg shadow-slate-500/20')} group-hover:scale-125 transition-all`}></div>
+                      <div className={`w-4 h-4 rounded-full ${isLast ? (isDarkMode ? 'bg-slate-700 border-2 border-slate-600' : 'bg-slate-300 border-2 border-slate-400') : (isDarkMode ? 'bg-orange-500 border-2 border-orange-400' : 'bg-slate-900 border-2 border-slate-800')} transition-all`}></div>
                     </div>
                     <div className={`flex-1 pb-8 ${isLeft ? 'pl-16 md:pl-0' : 'pl-16 md:pl-12'}`}>
                       {isLeft && (
                         <div className="md:hidden">
-                          <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.period}</div>
-                          <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>{item.title}</h3>
-                          <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.company}</p>
-                          <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>{item.description}</p>
+                          <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm mb-2 font-medium`}>{item.period}</div>
+                          <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{item.title}</h3>
+                          <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-2`}>{item.company}</p>
+                          <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}>{item.description}</p>
                         </div>
                       )}
                       {!isLeft && (
                         <div>
-                          <div className={`${isDarkMode ? 'text-orange-400/70' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.period}</div>
-                          <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>{item.title}</h3>
-                          <p className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-sm mb-2 font-mono`}>{item.company}</p>
-                          <p className={`${isDarkMode ? 'text-orange-100/70' : 'text-slate-700'} leading-relaxed`}>{item.description}</p>
+                          <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm mb-2 font-medium`}>{item.period}</div>
+                          <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{item.title}</h3>
+                          <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-2`}>{item.company}</p>
+                          <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}>{item.description}</p>
                         </div>
                       )}
                     </div>
@@ -368,17 +368,17 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 <div
                   key={project.id}
                   onClick={() => handleProjectSelect(project.id)}
-                  className={`group relative overflow-hidden rounded-lg ${isDarkMode ? 'bg-gradient-to-br from-orange-500/10 to-amber-500/5 border-orange-500/20 hover:border-orange-400/40 hover:shadow-orange-500/10' : 'bg-white/80 border-slate-300 hover:border-slate-400 hover:shadow-slate-200'} backdrop-blur-sm border p-6 transition-all duration-300 hover:shadow-lg cursor-pointer hover:scale-105 hover:-translate-y-1 animate-fade-in-up`}
+                  className={`group relative overflow-hidden rounded-2xl ${isDarkMode ? 'bg-slate-900/50 border-slate-800 hover:border-orange-500/40' : 'bg-white border-slate-200 hover:border-slate-300'} backdrop-blur-sm border p-6 transition-all duration-200 hover:shadow-xl cursor-pointer animate-fade-in-up`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-2`}>{project.title}</h3>
-                  <p className={`${isDarkMode ? 'text-orange-200/60' : 'text-slate-600'} text-sm mb-4`}>{project.description}</p>
+                  <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{project.title}</h3>
+                  <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-4`}>{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, index) => (
-                      <span key={index} className={`px-2 py-1 ${isDarkMode ? 'bg-orange-500/20 text-orange-300' : 'bg-slate-200 text-slate-700'} rounded text-xs font-mono`}>{tag}</span>
+                      <span key={index} className={`px-2.5 py-1 ${isDarkMode ? 'bg-orange-500/10 text-orange-400' : 'bg-slate-100 text-slate-700'} rounded-lg text-xs font-medium`}>{tag}</span>
                     ))}
                   </div>
-                  <div className={`${isDarkMode ? 'text-orange-400 hover:text-orange-300' : 'text-slate-700 hover:text-slate-900'} text-sm transition-colors font-mono`}>View Project →</div>
+                  <div className={`${isDarkMode ? 'text-orange-400 hover:text-orange-300' : 'text-slate-700 hover:text-slate-900'} text-sm transition-colors font-medium`}>View Project →</div>
                 </div>
               ))}
             </div>
@@ -389,19 +389,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'projects' && selectedProject && (
       <>
-        <div
-          className="absolute top-0 left-0 w-full h-[300px] z-0"
-          style={{
-            backgroundImage: "url('./wallpaperflare-cropped.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-            zIndex: "1",
-          }}
-        ></div>
-
-        <section id="project-detail" className={`relative z-10 px-6 pt-60 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <section id="project-detail" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <div className="w-full max-w-[1250px] mx-auto">
             <div className="w-full md:w-[80%] mx-auto">
               <button
@@ -415,39 +403,39 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 <div className="animate-fade-in-up">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, index) => (
-                      <span key={index} className={`px-2.5 py-1 ${isDarkMode ? 'bg-orange-500/20 text-orange-300' : 'bg-slate-200 text-slate-700'} rounded text-xs font-mono`}>{tag}</span>
+                      <span key={index} className={`px-2.5 py-1 ${isDarkMode ? 'bg-orange-500/10 text-orange-400' : 'bg-slate-100 text-slate-700'} rounded-lg text-xs font-medium`}>{tag}</span>
                     ))}
                   </div>
 
-                  <h2 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-3xl font-bold mb-6`}>{project.title}</h2>
+                  <h2 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-3xl font-semibold mb-6`}>{project.title}</h2>
 
                   <div className="grid grid-cols-3 gap-3 mb-6">
                     <img
                       src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800"
                       alt="Project screenshot 1"
-                      className={`w-full h-48 object-cover rounded-lg border ${isDarkMode ? 'border-orange-500/20' : 'border-slate-300'}`}
+                      className={`w-full h-48 object-cover rounded-xl border ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} shadow-lg`}
                     />
                     <img
                       src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800"
                       alt="Project screenshot 2"
-                      className={`w-full h-48 object-cover rounded-lg border ${isDarkMode ? 'border-orange-500/20' : 'border-slate-300'}`}
+                      className={`w-full h-48 object-cover rounded-xl border ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} shadow-lg`}
                     />
                     <img
                       src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800"
                       alt="Project screenshot 3"
-                      className={`w-full h-48 object-cover rounded-lg border ${isDarkMode ? 'border-orange-500/20' : 'border-slate-300'}`}
+                      className={`w-full h-48 object-cover rounded-xl border ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} shadow-lg`}
                     />
                   </div>
 
-                  <p className={`${isDarkMode ? 'text-orange-200/80' : 'text-slate-700'} text-base leading-relaxed mb-6`}>{project.longDescription}</p>
+                  <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-base leading-relaxed mb-6`}>{project.longDescription}</p>
 
                   <div>
-                    <h3 className={`${isDarkMode ? 'text-orange-100' : 'text-slate-900'} text-xl font-bold mb-4`}>{t.projects.keyFeatures}</h3>
+                    <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-4`}>{t.projects.keyFeatures}</h3>
                     <ul className="space-y-2 mb-8">
                       {project.features.map((feature, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <span className={`${isDarkMode ? 'text-orange-400' : 'text-slate-600'} mt-1`}>▸</span>
-                          <span className={`${isDarkMode ? 'text-orange-200/70' : 'text-slate-700'}`}>{feature}</span>
+                          <span className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -458,7 +446,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`px-6 py-2.5 ${isDarkMode ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-gray-900 hover:shadow-orange-500/30' : 'bg-[#273447] text-white hover:shadow-[#273447]/30'} font-bold text-sm rounded-lg hover:shadow-lg transition-all`}
+                      className={`px-6 py-2.5 ${isDarkMode ? 'bg-orange-500 text-white hover:shadow-orange-500/20' : 'bg-slate-900 text-white hover:shadow-slate-900/20'} font-semibold text-sm rounded-xl hover:shadow-lg transition-all`}
                     >
                       {t.projects.viewOnGithub}
                     </a>
@@ -466,7 +454,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`px-6 py-2.5 ${isDarkMode ? 'bg-orange-500/10 text-orange-300 border-orange-500/20 hover:bg-orange-500/20 hover:border-orange-400/40' : 'bg-slate-100 text-slate-800 border-slate-300 hover:bg-slate-200 hover:border-slate-400'} font-bold text-sm rounded-lg border transition-all`}
+                      className={`px-6 py-2.5 ${isDarkMode ? 'bg-slate-900/50 text-slate-300 border-slate-800 hover:bg-slate-900/80' : 'bg-slate-100 text-slate-800 border-slate-200 hover:bg-slate-200'} font-semibold text-sm rounded-xl border transition-all`}
                     >
                       {t.projects.viewLive}
                     </a>
@@ -485,7 +473,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         <div className="w-full max-w-[1250px] mx-auto">
           <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[150px] gap-3 animate-fade-in">
-              <div className="col-span-1 row-span-1 overflow-hidden rounded-lg group">
+              <div className="col-span-1 row-span-1 overflow-hidden rounded-xl group border border-slate-800 dark:border-slate-200">
                 <img
                   src="https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Photography"
@@ -493,7 +481,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-2 overflow-hidden rounded-lg group">
+              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-2 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Photography"
@@ -501,7 +489,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-lg group">
+              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Photography"
@@ -509,7 +497,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-lg group">
+              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1450360/pexels-photo-1450360.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Photography"
@@ -517,7 +505,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-1 overflow-hidden rounded-lg group">
+              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-1 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1212487/pexels-photo-1212487.jpeg?auto=compress&cs=tinysrgb&w=1200"
                   alt="Photography"
@@ -525,7 +513,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-1 row-span-1 overflow-hidden rounded-lg group">
+              <div className="col-span-1 row-span-1 overflow-hidden rounded-xl group border border-slate-800 dark:border-slate-200">
                 <img
                   src="https://images.pexels.com/photos/1252500/pexels-photo-1252500.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Photography"
@@ -533,7 +521,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-lg group">
+              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1456291/pexels-photo-1456291.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Photography"
@@ -541,7 +529,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-1 row-span-1 overflow-hidden rounded-lg group">
+              <div className="col-span-1 row-span-1 overflow-hidden rounded-xl group border border-slate-800 dark:border-slate-200">
                 <img
                   src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Photography"
@@ -549,7 +537,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-2 overflow-hidden rounded-lg group">
+              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-2 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1007427/pexels-photo-1007427.jpeg?auto=compress&cs=tinysrgb&w=1200"
                   alt="Photography"
@@ -557,7 +545,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-1 row-span-1 overflow-hidden rounded-lg group">
+              <div className="col-span-1 row-span-1 overflow-hidden rounded-xl group border border-slate-800 dark:border-slate-200">
                 <img
                   src="https://images.pexels.com/photos/1496372/pexels-photo-1496372.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Photography"
@@ -565,7 +553,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-lg group">
+              <div className="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Photography"
@@ -573,7 +561,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 />
               </div>
 
-              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-1 overflow-hidden rounded-lg group">
+              <div className="col-span-2 md:col-span-2 lg:col-span-2 row-span-1 overflow-hidden rounded-xl group">
                 <img
                   src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1200"
                   alt="Photography"
@@ -591,12 +579,12 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         <div className="w-full max-w-[1250px] mx-auto">
           <div className="w-full">
             <div className="flex flex-wrap gap-3 animate-fade-in">
-              <span className={`px-4 py-2 ${isDarkMode ? 'bg-gradient-to-r from-orange-500/10 to-amber-500/10 border-orange-500/30 text-orange-200 hover:border-orange-400/50 hover:shadow-orange-500/20' : 'bg-white/80 border-slate-300 text-slate-800 hover:border-slate-400 hover:shadow-slate-200'} backdrop-blur-sm rounded-lg border text-base font-mono hover:shadow-lg hover:scale-105 transition-all cursor-default`}>React</span>
-              <span className={`px-4 py-2 ${isDarkMode ? 'bg-gradient-to-r from-orange-500/10 to-amber-500/10 border-orange-500/30 text-orange-200 hover:border-orange-400/50 hover:shadow-orange-500/20' : 'bg-white/80 border-slate-300 text-slate-800 hover:border-slate-400 hover:shadow-slate-200'} backdrop-blur-sm rounded-lg border text-base font-mono hover:shadow-lg hover:scale-105 transition-all cursor-default`}>TypeScript</span>
-              <span className={`px-4 py-2 ${isDarkMode ? 'bg-gradient-to-r from-orange-500/10 to-amber-500/10 border-orange-500/30 text-orange-200 hover:border-orange-400/50 hover:shadow-orange-500/20' : 'bg-white/80 border-slate-300 text-slate-800 hover:border-slate-400 hover:shadow-slate-200'} backdrop-blur-sm rounded-lg border text-base font-mono hover:shadow-lg hover:scale-105 transition-all cursor-default`}>Node.js</span>
-              <span className={`px-4 py-2 ${isDarkMode ? 'bg-gradient-to-r from-orange-500/10 to-amber-500/10 border-orange-500/30 text-orange-200 hover:border-orange-400/50 hover:shadow-orange-500/20' : 'bg-white/80 border-slate-300 text-slate-800 hover:border-slate-400 hover:shadow-slate-200'} backdrop-blur-sm rounded-lg border text-base font-mono hover:shadow-lg hover:scale-105 transition-all cursor-default`}>AI/ML</span>
-              <span className={`px-4 py-2 ${isDarkMode ? 'bg-gradient-to-r from-orange-500/10 to-amber-500/10 border-orange-500/30 text-orange-200 hover:border-orange-400/50 hover:shadow-orange-500/20' : 'bg-white/80 border-slate-300 text-slate-800 hover:border-slate-400 hover:shadow-slate-200'} backdrop-blur-sm rounded-lg border text-base font-mono hover:shadow-lg hover:scale-105 transition-all cursor-default`}>Photography</span>
-              <span className={`px-4 py-2 ${isDarkMode ? 'bg-gradient-to-r from-orange-500/10 to-amber-500/10 border-orange-500/30 text-orange-200 hover:border-orange-400/50 hover:shadow-orange-500/20' : 'bg-white/80 border-slate-300 text-slate-800 hover:border-slate-400 hover:shadow-slate-200'} backdrop-blur-sm rounded-lg border text-base font-mono hover:shadow-lg hover:scale-105 transition-all cursor-default`}>UI/UX Design</span>
+              <span className={`px-4 py-2 ${isDarkMode ? 'bg-slate-900/50 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-xl border text-base font-medium transition-all cursor-default`}>React</span>
+              <span className={`px-4 py-2 ${isDarkMode ? 'bg-slate-900/50 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-xl border text-base font-medium transition-all cursor-default`}>TypeScript</span>
+              <span className={`px-4 py-2 ${isDarkMode ? 'bg-slate-900/50 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-xl border text-base font-medium transition-all cursor-default`}>Node.js</span>
+              <span className={`px-4 py-2 ${isDarkMode ? 'bg-slate-900/50 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-xl border text-base font-medium transition-all cursor-default`}>AI/ML</span>
+              <span className={`px-4 py-2 ${isDarkMode ? 'bg-slate-900/50 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-xl border text-base font-medium transition-all cursor-default`}>Photography</span>
+              <span className={`px-4 py-2 ${isDarkMode ? 'bg-slate-900/50 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-xl border text-base font-medium transition-all cursor-default`}>UI/UX Design</span>
             </div>
           </div>
         </div>
@@ -743,14 +731,14 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       <footer className="relative z-10 mt-24 pb-12 px-6">
         <div className="w-full max-w-[1250px] mx-auto">
-          <div className={`border-t ${isDarkMode ? 'border-orange-500/20' : 'border-slate-300'} pt-8`}>
+          <div className={`border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} pt-8`}>
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className={`${isDarkMode ? 'text-orange-300/50' : 'text-slate-600'} text-sm font-mono`}>
+              <p className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm`}>
                 {t.footer.copyright}
               </p>
               <div className="flex items-center gap-6">
-                <button onClick={() => handleTabChange('privacy')} className={`${isDarkMode ? 'text-orange-300/50 hover:text-orange-200' : 'text-slate-600 hover:text-slate-900'} transition-all duration-200 text-sm font-mono hover:translate-x-1`}>{t.footer.privacy}</button>
-                <button onClick={() => handleTabChange('terms')} className={`${isDarkMode ? 'text-orange-300/50 hover:text-orange-200' : 'text-slate-600 hover:text-slate-900'} transition-all duration-200 text-sm font-mono hover:translate-x-1`}>{t.footer.terms}</button>
+                <button onClick={() => handleTabChange('privacy')} className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-500 hover:text-slate-900'} transition-all duration-200 text-sm`}>{t.footer.privacy}</button>
+                <button onClick={() => handleTabChange('terms')} className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-500 hover:text-slate-900'} transition-all duration-200 text-sm`}>{t.footer.terms}</button>
               </div>
             </div>
           </div>
