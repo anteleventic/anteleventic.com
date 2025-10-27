@@ -416,8 +416,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       )}
 
       {activeTab === 'projects' && selectedProject && (
-      <>
-        <section id="project-detail" className={`relative pt-32 z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <section id="project-detail" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <div className="w-full max-w-[1250px] mx-auto">
             <div className="w-full md:w-[80%] mx-auto">
               <button
@@ -493,7 +492,6 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
           </div>
         </div>
       </section>
-      </>
       )}
 
       {activeTab === 'photography' && (
@@ -620,20 +618,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       )}
 
       {activeTab === 'privacy' && (
-      <>
-        <div
-          className="absolute top-0 left-0 w-full h-[300px] z-0"
-          style={{
-            backgroundImage: "url('./wallpaperflare-cropped.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-            zIndex: "1",
-          }}
-        ></div>
-
-        <section id="privacy" className={`relative z-10 px-6 pt-60 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <section id="privacy" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <div className="w-full max-w-[1250px] mx-auto">
             <button
               onClick={() => handleTabChange('about')}
@@ -685,24 +670,10 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
             </div>
           </div>
         </section>
-      </>
       )}
 
       {activeTab === 'terms' && (
-      <>
-        <div
-          className="absolute top-0 left-0 w-full h-[300px] z-0"
-          style={{
-            backgroundImage: "url('./wallpaperflare-cropped.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-            zIndex: "1",
-          }}
-        ></div>
-
-        <section id="terms" className={`relative z-10 px-6 pt-60 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <section id="terms" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
           <div className="w-full max-w-[1250px] mx-auto">
             <button
               onClick={() => handleTabChange('about')}
@@ -754,7 +725,6 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
             </div>
           </div>
         </section>
-      </>
       )}
 
       <footer className="relative z-10 mt-24 pb-12 px-6">
