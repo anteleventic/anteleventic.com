@@ -1,0 +1,140 @@
+{
+  "name": "Ante Leventic",
+  "role": "Full-Stack Developer",
+  "hero": {
+    "description": "When I'm not coding, exploring the AI World or vibe coding my next \"passive\" App project, I'm probably behind a camera trying to look like a pro photographer—or out on my motorcycle, chasing the best death curve.",
+    "yearsExperience": "Years Experience",
+    "projects": "Projects"
+  },
+  "footer": {
+    "copyright": "© 2024 Ante Leventic. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "tabs": {
+    "home": "home.tsx",
+    "about": "about.tsx",
+    "projects": "projects.tsx",
+    "photography": "photography.tsx",
+    "skills": "skills.tsx"
+  },
+  "about": {
+    "title": "About Me",
+    "content": "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating beautiful, functional applications that solve real-world problems. With years of experience in both frontend and backend development, I bring ideas to life through clean code and intuitive design.",
+    "timeline": [
+      {
+        "period": "2024 - Present",
+        "title": "Senior Full-Stack Developer & AI Specialist",
+        "company": "Freelance",
+        "description": "Leading development of innovative AI-powered applications and web solutions. Specializing in React, TypeScript, and machine learning integration for enterprise clients."
+      },
+      {
+        "period": "2020 - 2024",
+        "title": "Lead Frontend Developer",
+        "company": "Tech Innovations Inc.",
+        "description": "Architected and built scalable web applications serving millions of users. Led a team of 5 developers in delivering high-performance React applications."
+      },
+      {
+        "period": "2017 - 2020",
+        "title": "Full-Stack Developer",
+        "company": "Digital Solutions Ltd.",
+        "description": "Developed end-to-end web applications using modern JavaScript frameworks. Collaborated with design teams to create intuitive user experiences."
+      },
+      {
+        "period": "2015 - 2017",
+        "title": "Junior Web Developer",
+        "company": "StartUp Labs",
+        "description": "Contributed to various web development projects, gaining hands-on experience with HTML, CSS, JavaScript, and basic backend technologies."
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewDetails": "View Details",
+    "backToProjects": "Back to Projects",
+    "keyFeatures": "Key Features",
+    "viewOnGithub": "View on GitHub",
+    "viewLive": "View Live Demo",
+    "items": [
+      {
+        "title": "AI Task Manager",
+        "description": "Intelligent task management system powered by machine learning algorithms for automatic prioritization.",
+        "longDescription": "A comprehensive task management platform that uses advanced machine learning algorithms to automatically prioritize tasks based on deadlines, importance, and user behavior patterns. Features include smart notifications, collaborative workspaces, and detailed analytics.",
+        "features": [
+          "Smart task prioritization",
+          "Collaborative workspaces",
+          "Real-time notifications",
+          "Analytics dashboard"
+        ]
+      },
+      {
+        "title": "Portfolio Generator",
+        "description": "Create stunning portfolio websites in minutes with customizable templates and drag-and-drop interface.",
+        "longDescription": "An intuitive portfolio builder that empowers creators to build beautiful, responsive portfolio websites without writing code. Features a drag-and-drop interface, customizable templates, and automatic optimization for all devices.",
+        "features": [
+          "Drag-and-drop builder",
+          "Responsive templates",
+          "Custom domains",
+          "SEO optimization"
+        ]
+      },
+      {
+        "title": "Social Analytics Dashboard",
+        "description": "Real-time social media analytics platform with comprehensive insights and automated reporting.",
+        "longDescription": "A powerful analytics platform that provides real-time insights into social media performance across multiple platforms. Includes automated reporting, audience analysis, and engagement tracking.",
+        "features": [
+          "Multi-platform integration",
+          "Real-time analytics",
+          "Automated reports",
+          "Audience insights"
+        ]
+      },
+      {
+        "title": "E-Commerce Platform",
+        "description": "Full-featured online shopping platform with payment integration and inventory management.",
+        "longDescription": "A complete e-commerce solution with secure payment processing, inventory management, and customer relationship tools. Built for scalability and performance with modern web technologies.",
+        "features": [
+          "Secure payments",
+          "Inventory management",
+          "Customer portal",
+          "Order tracking"
+        ]
+      }
+    ]
+  },
+  "photography": {
+    "title": "Photography",
+    "subtitle": "Capturing moments through the lens"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Others"
+    },
+    "items": {
+      "frontend": [
+        "React & Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vue.js",
+        "HTML5 & CSS3"
+      ],
+      "backend": [
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+        "MongoDB",
+        "REST APIs"
+      ],
+      "tools": [
+        "Git & GitHub",
+        "Docker",
+        "VS Code",
+        "Figma",
+        "Agile/Scrum"
+      ]
+    }
+  }
+}

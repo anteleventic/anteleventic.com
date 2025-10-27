@@ -210,7 +210,18 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
             </div>
 
             {/* Mobile Controls */}
-            <div className="flex md:hidden items-center justify-between w-full">
+            <div className="flex md:hidden items-center gap-2">
+              <button
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                className={`p-2 rounded-lg transition-all duration-200 ${
+                  isDarkMode
+                    ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+                aria-label="Toggle theme"
+              >
+                {isDarkMode ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
+              </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`p-2 rounded-lg transition-all duration-200 ${
@@ -222,79 +233,15 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               >
                 {isMobileMenuOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
               </button>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setIsDarkMode(!isDarkMode)}
-                  className={`p-2 rounded-lg transition-all duration-200 ${
-                    isDarkMode
-                      ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                  }`}
-                  aria-label="Toggle theme"
-                >
-                  {isDarkMode ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
-                </button>
-                <div className="relative">
-                  <button
-                    onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-                    className={`p-2 rounded-lg transition-all duration-200 ${
-                      isDarkMode
-                        ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                    }`}
-                    aria-label="Toggle language"
-                  >
-                    <Languages size={20} strokeWidth={1.5} />
-                  </button>
-                  {isLanguageDropdownOpen && (
-                    <div className={`absolute top-full mt-2 right-0 ${isDarkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white border-slate-200'} border rounded-xl shadow-2xl backdrop-blur-sm overflow-hidden min-w-[120px] z-50`}>
-                      <button
-                        onClick={() => {
-                          setLanguage('en');
-                          setIsLanguageDropdownOpen(false);
-                        }}
-                        className={`w-full px-4 py-2.5 text-left transition-all text-sm ${
-                          language === 'en'
-                            ? isDarkMode
-                              ? 'bg-orange-500/10 text-orange-400'
-                              : 'bg-slate-100 text-slate-900'
-                            : isDarkMode
-                              ? 'text-slate-400 hover:bg-slate-800/50 hover:text-white'
-                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
-                        }`}
-                      >
-                        English
-                      </button>
-                      <button
-                        onClick={() => {
-                          setLanguage('de');
-                          setIsLanguageDropdownOpen(false);
-                        }}
-                        className={`w-full px-4 py-2.5 text-left transition-all text-sm ${
-                          language === 'de'
-                            ? isDarkMode
-                              ? 'bg-orange-500/10 text-orange-400'
-                              : 'bg-slate-100 text-slate-900'
-                            : isDarkMode
-                              ? 'text-slate-400 hover:bg-slate-800/50 hover:text-white'
-                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
-                        }`}
-                      >
-                        Deutsch
-                      </button>
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Mobile Menu Dropdown */}
           {isMobileMenuOpen && (
-            <div className={`md:hidden border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} p-2 space-y-1 animate-slideDown`}>
+            <div className={`md:hidden border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} p-2 space-y-1`}>
               <button
                 onClick={() => handleTabChange('home')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
                   activeTab === 'home'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -308,7 +255,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('about')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:50ms] ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
                   activeTab === 'about'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -322,7 +269,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('projects')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:100ms] ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
                   activeTab === 'projects'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -336,7 +283,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('photography')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:150ms] ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
                   activeTab === 'photography'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -350,7 +297,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('skills')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:200ms] ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
                   activeTab === 'skills'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -362,6 +309,42 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               >
                 {t.tabs.skills}
               </button>
+              <div className={`pt-2 mt-2 border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} space-y-1`}>
+                <button
+                  onClick={() => {
+                    setLanguage('en');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                    language === 'en'
+                      ? isDarkMode
+                        ? 'bg-orange-500/10 text-orange-400'
+                        : 'bg-slate-100 text-slate-900'
+                      : isDarkMode
+                        ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    setLanguage('de');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                    language === 'de'
+                      ? isDarkMode
+                        ? 'bg-orange-500/10 text-orange-400'
+                        : 'bg-slate-100 text-slate-900'
+                      : isDarkMode
+                        ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Deutsch
+                </button>
+              </div>
             </div>
           )}
         </div>
