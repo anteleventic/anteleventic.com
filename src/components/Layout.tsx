@@ -1,4 +1,4 @@
-import { Sun, Moon, Languages, Menu, X } from 'lucide-react';
+import { Sun, Moon, Languages, Menu, X, Home, User, Briefcase, Camera, Code } from 'lucide-react';
 import { useState, useEffect, ReactNode } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -61,13 +61,13 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
         <div className={`absolute top-[60%] left-[15%] w-[350px] h-px ${isDarkMode ? 'bg-gradient-to-r from-transparent via-orange-500/20 to-transparent' : 'bg-gradient-to-r from-transparent via-slate-300/60 to-transparent'} -rotate-12`}></div>
       </div>
 
-      <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
-        <div className={`w-full md:w-auto max-w-[725px] ${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
-          <div className="flex items-center justify-between gap-2 p-2">
-            <div className="hidden md:flex flex-wrap gap-1">
+      <nav className="fixed top-6 left-6 right-6 z-50 flex justify-start">
+        <div className={`${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
+          <div className="flex items-center gap-2 p-2">
+            <div className="hidden md:flex gap-1">
               <button
                 onClick={() => navigate('/')}
-                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                className={`p-2.5 transition-all duration-200 rounded-xl ${
                   activeTab === 'home'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -76,12 +76,13 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
+                aria-label="Home"
               >
-                {t.tabs.home}
+                <Home size={18} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => navigate('/about')}
-                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                className={`p-2.5 transition-all duration-200 rounded-xl ${
                   activeTab === 'about'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -90,12 +91,13 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
+                aria-label="About"
               >
-                {t.tabs.about}
+                <User size={18} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => navigate('/projects')}
-                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                className={`p-2.5 transition-all duration-200 rounded-xl ${
                   activeTab === 'projects'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -104,12 +106,13 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
+                aria-label="Projects"
               >
-                {t.tabs.projects}
+                <Briefcase size={18} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => navigate('/photography')}
-                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                className={`p-2.5 transition-all duration-200 rounded-xl ${
                   activeTab === 'photography'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -118,12 +121,13 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
+                aria-label="Photography"
               >
-                {t.tabs.photography}
+                <Camera size={18} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => navigate('/skills')}
-                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                className={`p-2.5 transition-all duration-200 rounded-xl ${
                   activeTab === 'skills'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -132,12 +136,13 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
+                aria-label="Skills"
               >
-                {t.tabs.skills}
+                <Code size={18} strokeWidth={1.5} />
               </button>
             </div>
 
-            <div className={`hidden md:flex gap-1 ml-2 pl-2 ${isDarkMode ? 'border-l border-slate-800' : 'border-l border-slate-200'}`}>
+            <div className={`hidden md:flex gap-1 ml-1 pl-2 ${isDarkMode ? 'border-l border-slate-800' : 'border-l border-slate-200'}`}>
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
@@ -257,7 +262,7 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
             <div className={`border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} p-2 space-y-1`}>
               <button
                 onClick={() => navigate('/')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left flex items-center gap-3 ${
                   activeTab === 'home'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -267,11 +272,12 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
+                <Home size={16} strokeWidth={1.5} />
                 {t.tabs.home}
               </button>
               <button
                 onClick={() => navigate('/about')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left flex items-center gap-3 ${
                   activeTab === 'about'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -281,11 +287,12 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
+                <User size={16} strokeWidth={1.5} />
                 {t.tabs.about}
               </button>
               <button
                 onClick={() => navigate('/projects')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left flex items-center gap-3 ${
                   activeTab === 'projects'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -295,11 +302,12 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
+                <Briefcase size={16} strokeWidth={1.5} />
                 {t.tabs.projects}
               </button>
               <button
                 onClick={() => navigate('/photography')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left flex items-center gap-3 ${
                   activeTab === 'photography'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -309,11 +317,12 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
+                <Camera size={16} strokeWidth={1.5} />
                 {t.tabs.photography}
               </button>
               <button
                 onClick={() => navigate('/skills')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left flex items-center gap-3 ${
                   activeTab === 'skills'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -323,6 +332,7 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
+                <Code size={16} strokeWidth={1.5} />
                 {t.tabs.skills}
               </button>
             </div>
