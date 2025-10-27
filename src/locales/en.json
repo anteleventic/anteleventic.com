@@ -12,7 +12,6 @@
     "terms": "Terms"
   },
   "tabs": {
-    "home": "home.tsx",
     "about": "about.tsx",
     "projects": "projects.tsx",
     "photography": "photography.tsx",
