@@ -59,59 +59,29 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
     features: project.features
   }));
   return (
-    <div className={`relative min-h-screen w-full overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-950 via-gray-900 to-custom-brown' : 'bg-gradient-to-br from-gray-100 via-slate-50 to-gray-100'} font-mono transition-colors duration-500`}>
-      <div
-        className="absolute top-0 left-0 w-full h-[300px] z-0 transition-opacity duration-500"
-        style={{
-          backgroundImage: "url('./wallpaperflare-cropped.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
-          zIndex: "1",
-          opacity: isDarkMode ? 1 : 1,
-        }}
-      ></div>
-
+    <div className={`relative min-h-screen w-full overflow-hidden ${isDarkMode ? 'bg-slate-950' : 'bg-white'} transition-colors duration-500`}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute top-20 left-[10%] w-96 h-96 bg-gradient-to-br ${isDarkMode ? 'from-orange-500/20 via-amber-500/10' : 'from-blue-500/12 via-blue-400/8'} to-transparent rounded-full blur-3xl transition-colors duration-500`}></div>
-        <div className={`absolute top-40 right-[15%] w-[500px] h-[500px] bg-gradient-to-bl ${isDarkMode ? 'from-orange-500/12 via-amber-600/8' : 'from-blue-400/10 via-blue-300/6'} to-transparent rounded-full blur-3xl transition-colors duration-500`}></div>
-        <div className={`absolute bottom-40 left-[20%] w-[450px] h-[450px] bg-gradient-to-tr ${isDarkMode ? 'from-amber-500/6 via-orange-600/3' : 'from-blue-300/8 via-blue-400/5'} to-transparent rounded-full blur-3xl transition-colors duration-500`}></div>
+        <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] ${isDarkMode ? 'bg-orange-500/5' : 'bg-slate-200/40'} rounded-full blur-3xl transition-colors duration-500`}></div>
       </div>
-
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          backgroundImage: isDarkMode
-            ? "radial-gradient(rgba(251, 146, 60, 0.15) 0.8px, transparent 0.8px)"
-            : "radial-gradient(rgba(71, 85, 105, 0.18) 0.8px, transparent 0.8px)",
-          backgroundSize: "24px 24px",
-          backgroundPosition: "center center",
-          position: "absolute",
-          top: 0,
-          left: 0,
-        }}
-      ></div>
 
       <div className="fixed top-8 left-0 right-0 z-50 flex justify-center px-6">
         <div className="w-full md:w-4/5 max-w-[1250px] flex justify-end gap-3">
           <div className="relative">
             <button
               onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-              className={`p-3 rounded-lg ${isDarkMode ? 'bg-orange-500/10 text-orange-300/60 hover:text-orange-200 hover:bg-orange-500/20' : 'bg-slate-800/90 text-slate-100 hover:text-white hover:bg-slate-900/95'} transition-all duration-300 hover:scale-110 hover:rotate-12 border ${isDarkMode ? 'border-orange-500/20' : 'border-slate-700'}`}
+              className={`p-2.5 rounded-xl ${isDarkMode ? 'bg-slate-900/50 text-slate-400 hover:text-orange-400 hover:bg-slate-900/80' : 'bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200'} transition-all duration-200 border ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} backdrop-blur-sm`}
               aria-label="Toggle language"
             >
               <Languages size={24} strokeWidth={1.5} />
             </button>
             {isLanguageDropdownOpen && (
-              <div className={`absolute top-full mt-2 right-0 ${isDarkMode ? 'bg-gray-900/95 border-orange-500/20' : 'bg-white/95 border-slate-300'} border rounded-lg shadow-lg backdrop-blur-sm overflow-hidden min-w-[120px]`}>
+              <div className={`absolute top-full mt-2 right-0 ${isDarkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white border-slate-200'} border rounded-xl shadow-xl backdrop-blur-sm overflow-hidden min-w-[120px]`}>
                 <button
                   onClick={() => {
                     setLanguage('en');
                     setIsLanguageDropdownOpen(false);
                   }}
-                  className={`w-full px-4 py-3 text-left font-mono text-sm font-semibold transition-colors ${language === 'en' ? (isDarkMode ? 'bg-orange-500/20 text-orange-200' : 'bg-[#273447] text-white') : (isDarkMode ? 'text-orange-300/60 hover:bg-orange-500/10 hover:text-orange-200' : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900')}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm font-medium transition-colors ${language === 'en' ? (isDarkMode ? 'bg-orange-500/10 text-orange-400' : 'bg-slate-100 text-slate-900') : (isDarkMode ? 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900')}`}
                 >
                   English
                 </button>
@@ -120,7 +90,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                     setLanguage('de');
                     setIsLanguageDropdownOpen(false);
                   }}
-                  className={`w-full px-4 py-3 text-left font-mono text-sm font-semibold transition-colors ${language === 'de' ? (isDarkMode ? 'bg-orange-500/20 text-orange-200' : 'bg-[#273447] text-white') : (isDarkMode ? 'text-orange-300/60 hover:bg-orange-500/10 hover:text-orange-200' : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900')}`}
+                  className={`w-full px-4 py-2.5 text-left text-sm font-medium transition-colors ${language === 'de' ? (isDarkMode ? 'bg-orange-500/10 text-orange-400' : 'bg-slate-100 text-slate-900') : (isDarkMode ? 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900')}`}
                 >
                   Deutsch
                 </button>
@@ -129,7 +99,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
           </div>
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className={`p-3 rounded-lg ${isDarkMode ? 'bg-orange-500/10 text-orange-300/60 hover:text-orange-200 hover:bg-orange-500/20' : 'bg-slate-800/90 text-slate-100 hover:text-white hover:bg-slate-900/95'} transition-all duration-300 hover:scale-110 hover:rotate-12 border ${isDarkMode ? 'border-orange-500/20' : 'border-slate-700'}`}
+            className={`p-2.5 rounded-xl ${isDarkMode ? 'bg-slate-900/50 text-slate-400 hover:text-orange-400 hover:bg-slate-900/80' : 'bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200'} transition-all duration-200 border ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} backdrop-blur-sm`}
             aria-label="Toggle theme"
           >
             {isDarkMode ? <Sun size={24} strokeWidth={1.5} /> : <Moon size={24} strokeWidth={1.5} />}
@@ -142,11 +112,10 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         <div className="w-full max-w-[1250px] flex flex-col lg:flex-row gap-8 lg:gap-16 relative">
           <div className="absolute left-[-185px] top-0 hidden xl:block">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 blur-md rounded-[18px]"></div>
               <img
                 src="https://profile-images.xing.com/images/b4547c89e9a533fb14c3c3ab66c76d66-3/ante-leventic.256x256.jpg"
                 alt="Ante Leventic"
-                className={`relative w-36 h-36 object-cover rounded-[18px] border-2 ${isDarkMode ? 'border-orange-500/60' : 'border-[#273447]'} transform rotate-[-3deg]`}
+                className={`relative w-36 h-36 object-cover rounded-2xl border-2 ${isDarkMode ? 'border-orange-500/40' : 'border-slate-200'} shadow-xl`}
               />
             </div>
           </div>
@@ -154,18 +123,17 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
           <div className="flex-1 text-center lg:text-left">
             <div className="xl:hidden flex justify-center lg:justify-start mb-4">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 blur-md rounded-[18px]"></div>
                 <img
                   src="https://profile-images.xing.com/images/b4547c89e9a533fb14c3c3ab66c76d66-3/ante-leventic.256x256.jpg"
                   alt="Ante Leventic"
-                  className={`relative w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-[18px] border-2 ${isDarkMode ? 'border-orange-500/60' : 'border-[#273447]'} transform rotate-[-3deg]`}
+                  className={`relative w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-2xl border-2 ${isDarkMode ? 'border-orange-500/40' : 'border-slate-200'} shadow-xl`}
                 />
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-2">
-              <div className={`inline-block px-3 py-1 bg-gradient-to-r ${isDarkMode ? 'from-orange-500/20 to-amber-500/20' : 'from-slate-800/15 to-slate-700/15'} backdrop-blur-sm rounded-md border ${isDarkMode ? 'border-orange-500/30' : 'border-slate-700/50'} leading-none`}>
-                <span className={`relative ${isDarkMode ? 'text-orange-300' : 'text-slate-800'} text-xs font-semibold tracking-[0.2em] uppercase leading-none transition-colors duration-500`}>
+              <div className={`inline-block px-3 py-1.5 ${isDarkMode ? 'bg-orange-500/5' : 'bg-slate-100'} backdrop-blur-sm rounded-lg border ${isDarkMode ? 'border-orange-500/20' : 'border-slate-200'} leading-none`}>
+                <span className={`relative ${isDarkMode ? 'text-orange-400' : 'text-slate-700'} text-xs font-medium tracking-wider uppercase leading-none transition-colors duration-500`}>
                   &lt;lewi/&gt;
                 </span>
               </div>
@@ -174,13 +142,13 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                   <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                   <div className="absolute w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
                 </div>
-                <span className={`${isDarkMode ? 'text-orange-200/70' : 'text-slate-700'} text-sm transition-colors duration-500`}>
+                <span className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm font-medium transition-colors duration-500`}>
                   available for freelance
                 </span>
               </div>
             </div>
 
-            <h1 className={`text-transparent bg-clip-text ${isDarkMode ? 'bg-gradient-to-r from-orange-200 via-amber-100 to-orange-300' : 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900'} text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight mb-6 transition-colors duration-500`}>
+            <h1 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6 transition-colors duration-500`}>
               {t.name}
             </h1>
 
@@ -189,7 +157,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? 'text-orange-300/60 hover:text-orange-200' : 'text-slate-700 hover:text-slate-900'} transition-all duration-300 hover:scale-110 hover:rotate-6`}
+                className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-400 hover:text-slate-900'} transition-all duration-200`}
                 aria-label="Instagram"
               >
                 <Instagram size={24} strokeWidth={1.5} />
@@ -199,7 +167,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? 'text-orange-300/60 hover:text-orange-200' : 'text-slate-700 hover:text-slate-900'} transition-all duration-300 hover:scale-110 hover:rotate-6`}
+                className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-400 hover:text-slate-900'} transition-all duration-200`}
                 aria-label="YouTube"
               >
                 <Youtube size={24} strokeWidth={1.5} />
@@ -209,7 +177,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 href="https://xing.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? 'text-orange-300/60 hover:text-orange-200' : 'text-slate-700 hover:text-slate-900'} transition-all duration-300 hover:scale-110 hover:rotate-6`}
+                className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-400 hover:text-slate-900'} transition-all duration-200`}
                 aria-label="Xing"
               >
                 <svg
@@ -230,7 +198,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? 'text-orange-300/60 hover:text-orange-200' : 'text-slate-700 hover:text-slate-900'} transition-all duration-300 hover:scale-110 hover:rotate-6`}
+                className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-400 hover:text-slate-900'} transition-all duration-200`}
                 aria-label="LinkedIn"
               >
                 <Linkedin size={24} strokeWidth={1.5} />
@@ -240,7 +208,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? 'text-orange-300/60 hover:text-orange-200' : 'text-slate-700 hover:text-slate-900'} transition-all duration-300 hover:scale-110 hover:rotate-6`}
+                className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-400 hover:text-slate-900'} transition-all duration-200`}
                 aria-label="GitHub"
               >
                 <Github size={24} strokeWidth={1.5} />
@@ -248,7 +216,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
               <a
                 href="mailto:contact@example.com"
-                className={`${isDarkMode ? 'text-orange-300/60 hover:text-orange-200' : 'text-slate-700 hover:text-slate-900'} transition-all duration-300 hover:scale-110 hover:rotate-6`}
+                className={`${isDarkMode ? 'text-slate-500 hover:text-orange-400' : 'text-slate-400 hover:text-slate-900'} transition-all duration-200`}
                 aria-label="Email"
               >
                 <Mail size={24} strokeWidth={1.5} />
@@ -257,82 +225,78 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               <div className="mt-8 md:mt-14 flex flex-wrap justify-center lg:justify-start gap-3">
                 <button
                   onClick={() => handleTabChange('about')}
-                  className={`px-4 lg:px-5 py-2 lg:py-2.5 text-[0.65rem] lg:text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded-lg relative overflow-hidden group transform hover:scale-105 hover:-translate-y-0.5 ${
+                  className={`px-5 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
                     activeTab === 'about'
                       ? isDarkMode
-                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-gray-900 shadow-lg shadow-orange-500/30'
-                        : 'bg-[#273447] text-white shadow-lg shadow-[#273447]/30'
+                        ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20'
+                        : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
                       : isDarkMode
-                        ? 'bg-orange-500/10 text-orange-300/70 hover:bg-orange-500/20 hover:text-orange-200 border border-orange-500/20 hover:shadow-md hover:shadow-orange-500/20'
-                        : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
+                        ? 'bg-slate-900/50 text-slate-400 hover:bg-slate-900/80 hover:text-white border border-slate-800'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
                   }`}
                 >
                   <span className="relative z-10">{t.tabs.about}</span>
-                  {activeTab === 'about' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
                 <button
                   onClick={() => handleTabChange('projects')}
-                  className={`px-4 lg:px-5 py-2 lg:py-2.5 text-[0.65rem] lg:text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded-lg relative overflow-hidden group transform hover:scale-105 hover:-translate-y-0.5 ${
+                  className={`px-5 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
                     activeTab === 'projects'
                       ? isDarkMode
-                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-gray-900 shadow-lg shadow-orange-500/30'
-                        : 'bg-[#273447] text-white shadow-lg shadow-[#273447]/30'
+                        ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20'
+                        : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
                       : isDarkMode
-                        ? 'bg-orange-500/10 text-orange-300/70 hover:bg-orange-500/20 hover:text-orange-200 border border-orange-500/20 hover:shadow-md hover:shadow-orange-500/20'
-                        : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
+                        ? 'bg-slate-900/50 text-slate-400 hover:bg-slate-900/80 hover:text-white border border-slate-800'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
                   }`}
                 >
                   <span className="relative z-10">{t.tabs.projects}</span>
-                  {activeTab === 'projects' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
                 <button
                   onClick={() => handleTabChange('photography')}
-                  className={`px-4 lg:px-5 py-2 lg:py-2.5 text-[0.65rem] lg:text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded-lg relative overflow-hidden group transform hover:scale-105 hover:-translate-y-0.5 ${
+                  className={`px-5 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
                     activeTab === 'photography'
                       ? isDarkMode
-                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-gray-900 shadow-lg shadow-orange-500/30'
-                        : 'bg-[#273447] text-white shadow-lg shadow-[#273447]/30'
+                        ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20'
+                        : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
                       : isDarkMode
-                        ? 'bg-orange-500/10 text-orange-300/70 hover:bg-orange-500/20 hover:text-orange-200 border border-orange-500/20 hover:shadow-md hover:shadow-orange-500/20'
-                        : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
+                        ? 'bg-slate-900/50 text-slate-400 hover:bg-slate-900/80 hover:text-white border border-slate-800'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
                   }`}
                 >
                   <span className="relative z-10">{t.tabs.photography}</span>
-                  {activeTab === 'photography' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
                 <button
                   onClick={() => handleTabChange('skills')}
-                  className={`px-4 lg:px-5 py-2 lg:py-2.5 text-[0.65rem] lg:text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded-lg relative overflow-hidden group transform hover:scale-105 hover:-translate-y-0.5 ${
+                  className={`px-5 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
                     activeTab === 'skills'
                       ? isDarkMode
-                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-gray-900 shadow-lg shadow-orange-500/30'
-                        : 'bg-[#273447] text-white shadow-lg shadow-[#273447]/30'
+                        ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20'
+                        : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
                       : isDarkMode
-                        ? 'bg-orange-500/10 text-orange-300/70 hover:bg-orange-500/20 hover:text-orange-200 border border-orange-500/20 hover:shadow-md hover:shadow-orange-500/20'
-                        : 'bg-slate-800/15 text-slate-800 hover:bg-slate-800/25 hover:text-slate-900 border border-slate-700/50 hover:shadow-md hover:shadow-slate-300'
+                        ? 'bg-slate-900/50 text-slate-400 hover:bg-slate-900/80 hover:text-white border border-slate-800'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
                   }`}
                 >
                   <span className="relative z-10">{t.tabs.skills}</span>
-                  {activeTab === 'skills' && <div className={`absolute inset-0 ${isDarkMode ? 'bg-gradient-to-r from-orange-400 to-amber-400' : 'bg-[#273447]'} opacity-0 group-hover:opacity-20 transition-opacity`}></div>}
                 </button>
               </div>
 
           </div>
 
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-8 w-full lg:w-auto">
-            <div className={`hidden lg:block h-px w-12 bg-gradient-to-r ${isDarkMode ? 'from-orange-500/50' : 'from-slate-400/50'} to-transparent mt-2`}></div>
+            <div className={`hidden lg:block h-px w-12 ${isDarkMode ? 'bg-slate-800' : 'bg-slate-200'} mt-2`}></div>
             <div className="w-full max-w-2xl lg:max-w-xs text-center lg:text-left px-4 lg:px-0">
-              <p className={`${isDarkMode ? 'text-orange-100/80' : 'text-slate-700'} text-sm sm:text-base leading-relaxed mb-6 lg:mb-8 transition-colors duration-500`}>
+              <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm sm:text-base leading-relaxed mb-6 lg:mb-8 transition-colors duration-500`}>
                 {t.hero.description}
               </p>
               <div className="hidden lg:flex justify-center lg:justify-start gap-6 sm:gap-8 mb-8">
                 <div className="group cursor-default">
-                  <div className={`text-transparent bg-clip-text ${isDarkMode ? 'bg-gradient-to-br from-orange-300 to-amber-400' : 'bg-gradient-to-br from-slate-800 to-slate-700'} text-3xl sm:text-4xl font-black mb-1 group-hover:scale-110 transition-transform`}>10+</div>
-                  <div className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-xs uppercase tracking-[0.2em]`}>{t.hero.yearsExperience}</div>
+                  <div className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-3xl sm:text-4xl font-bold mb-1 transition-transform`}>10+</div>
+                  <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-600'} text-xs font-medium uppercase tracking-wider`}>{t.hero.yearsExperience}</div>
                 </div>
                 <div className="group cursor-default">
-                  <div className={`text-transparent bg-clip-text ${isDarkMode ? 'bg-gradient-to-br from-orange-300 to-amber-400' : 'bg-gradient-to-br from-slate-800 to-slate-700'} text-3xl sm:text-4xl font-black mb-1 group-hover:scale-110 transition-transform`}>50+</div>
-                  <div className={`${isDarkMode ? 'text-orange-300/60' : 'text-slate-600'} text-xs uppercase tracking-[0.2em]`}>{t.hero.projects}</div>
+                  <div className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-3xl sm:text-4xl font-bold mb-1 transition-transform`}>50+</div>
+                  <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-600'} text-xs font-medium uppercase tracking-wider`}>{t.hero.projects}</div>
                 </div>
               </div>
             </div>
