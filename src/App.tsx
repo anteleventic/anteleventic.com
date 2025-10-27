@@ -82,22 +82,85 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         <div className={`absolute top-[60%] left-[15%] w-[350px] h-px ${isDarkMode ? 'bg-gradient-to-r from-transparent via-orange-500/20 to-transparent' : 'bg-gradient-to-r from-transparent via-slate-300/60 to-transparent'} -rotate-12`}></div>
       </div>
 
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 pt-6">
-        <div className={`w-full max-w-[725px] mx-auto ${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
-          <div className="flex items-center justify-between p-3">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-lg transition-all duration-200 ${
-                isDarkMode
-                  ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-              }`}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
-            </button>
+      <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
+        <div className={`w-full md:w-auto max-w-[725px] ${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
+          <div className="flex items-center justify-between gap-2 p-2">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex flex-wrap gap-1">
+              <button
+                onClick={() => handleTabChange('home')}
+                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                  activeTab === 'home'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.home}
+              </button>
+              <button
+                onClick={() => handleTabChange('about')}
+                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                  activeTab === 'about'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.about}
+              </button>
+              <button
+                onClick={() => handleTabChange('projects')}
+                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                  activeTab === 'projects'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.projects}
+              </button>
+              <button
+                onClick={() => handleTabChange('photography')}
+                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                  activeTab === 'photography'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.photography}
+              </button>
+              <button
+                onClick={() => handleTabChange('skills')}
+                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                  activeTab === 'skills'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.skills}
+              </button>
+            </div>
 
-            <div className="flex items-center gap-2">
+            {/* Desktop Controls */}
+            <div className={`hidden md:flex gap-1 ml-2 pl-2 ${isDarkMode ? 'border-l border-slate-800' : 'border-l border-slate-200'}`}>
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
@@ -111,7 +174,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                   <Languages size={20} strokeWidth={1.5} />
                 </button>
                 {isLanguageDropdownOpen && (
-                  <div className={`absolute top-full mt-2 right-0 ${isDarkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white border-slate-200'} border rounded-xl shadow-2xl backdrop-blur-sm overflow-hidden min-w-[120px] animate-slide-down`}>
+                  <div className={`absolute top-full mt-2 right-0 ${isDarkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white border-slate-200'} border rounded-xl shadow-2xl backdrop-blur-sm overflow-hidden min-w-[120px]`}>
                     <button
                       onClick={() => {
                         setLanguage('en');
@@ -145,13 +208,93 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 {isDarkMode ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
               </button>
             </div>
+
+            {/* Mobile Controls */}
+            <div className="flex md:hidden items-center justify-between w-full">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`p-2 rounded-lg transition-all duration-200 ${
+                  isDarkMode
+                    ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className={`p-2 rounded-lg transition-all duration-200 ${
+                    isDarkMode
+                      ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                  aria-label="Toggle theme"
+                >
+                  {isDarkMode ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
+                </button>
+                <div className="relative">
+                  <button
+                    onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                    className={`p-2 rounded-lg transition-all duration-200 ${
+                      isDarkMode
+                        ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                    }`}
+                    aria-label="Toggle language"
+                  >
+                    <Languages size={20} strokeWidth={1.5} />
+                  </button>
+                  {isLanguageDropdownOpen && (
+                    <div className={`absolute top-full mt-2 right-0 ${isDarkMode ? 'bg-slate-900/95 border-slate-800' : 'bg-white border-slate-200'} border rounded-xl shadow-2xl backdrop-blur-sm overflow-hidden min-w-[120px] z-50`}>
+                      <button
+                        onClick={() => {
+                          setLanguage('en');
+                          setIsLanguageDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 py-2.5 text-left transition-all text-sm ${
+                          language === 'en'
+                            ? isDarkMode
+                              ? 'bg-orange-500/10 text-orange-400'
+                              : 'bg-slate-100 text-slate-900'
+                            : isDarkMode
+                              ? 'text-slate-400 hover:bg-slate-800/50 hover:text-white'
+                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                        }`}
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => {
+                          setLanguage('de');
+                          setIsLanguageDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 py-2.5 text-left transition-all text-sm ${
+                          language === 'de'
+                            ? isDarkMode
+                              ? 'bg-orange-500/10 text-orange-400'
+                              : 'bg-slate-100 text-slate-900'
+                            : isDarkMode
+                              ? 'text-slate-400 hover:bg-slate-800/50 hover:text-white'
+                              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                        }`}
+                      >
+                        Deutsch
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
 
+          {/* Mobile Menu Dropdown */}
           {isMobileMenuOpen && (
-            <div className={`border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} p-3 space-y-1 animate-slide-down origin-top`}>
+            <div className={`md:hidden border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} p-2 space-y-1 animate-slideDown`}>
               <button
                 onClick={() => handleTabChange('home')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp ${
                   activeTab === 'home'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -165,7 +308,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('about')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:50ms] ${
                   activeTab === 'about'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -179,7 +322,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('projects')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:100ms] ${
                   activeTab === 'projects'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -193,7 +336,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('photography')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:150ms] ${
                   activeTab === 'photography'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
@@ -207,7 +350,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
               <button
                 onClick={() => handleTabChange('skills')}
-                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left animate-fadeInUp [animation-delay:200ms] ${
                   activeTab === 'skills'
                     ? isDarkMode
                       ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
