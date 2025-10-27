@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Linkedin, Mail, Github, Sun, Moon, Languages } from 'lucide-react';
+import { Instagram, Youtube, Linkedin, Mail, Github, Sun, Moon, Languages, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { TranslationProvider, useTranslation } from './hooks/useTranslation';
 
@@ -8,6 +8,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
@@ -19,6 +20,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
   const handleTabChange = (tab: string) => {
     setIsTransitioning(true);
+    setIsMobileMenuOpen(false);
     setTimeout(() => {
       setActiveTab(tab);
       setIsTransitioning(false);
@@ -81,9 +83,10 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       </div>
 
       <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
-        <div className={`w-full md:w-auto max-w-[1250px] ${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
-          <div className="flex flex-wrap items-center justify-between gap-2 p-2">
-            <div className="flex flex-wrap gap-1">
+        <div className={`w-full md:w-auto max-w-[725px] ${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
+          <div className="flex items-center justify-between gap-2 p-2">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex flex-wrap gap-1">
               <button
                 onClick={() => handleTabChange('home')}
                 className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
@@ -156,7 +159,8 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
               </button>
             </div>
 
-            <div className={`flex gap-1 ml-2 pl-2 ${isDarkMode ? 'border-l border-slate-800' : 'border-l border-slate-200'}`}>
+            {/* Desktop Controls */}
+            <div className={`hidden md:flex gap-1 ml-2 pl-2 ${isDarkMode ? 'border-l border-slate-800' : 'border-l border-slate-200'}`}>
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
@@ -204,13 +208,151 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
                 {isDarkMode ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
               </button>
             </div>
+
+            {/* Mobile Controls */}
+            <div className="flex md:hidden items-center gap-2">
+              <button
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                className={`p-2 rounded-lg transition-all duration-200 ${
+                  isDarkMode
+                    ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+                aria-label="Toggle theme"
+              >
+                {isDarkMode ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
+              </button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`p-2 rounded-lg transition-all duration-200 ${
+                  isDarkMode
+                    ? 'text-slate-400 hover:text-orange-400 hover:bg-slate-800/50'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Menu Dropdown */}
+          {isMobileMenuOpen && (
+            <div className={`md:hidden border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} p-2 space-y-1`}>
+              <button
+                onClick={() => handleTabChange('home')}
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                  activeTab === 'home'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.home}
+              </button>
+              <button
+                onClick={() => handleTabChange('about')}
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                  activeTab === 'about'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.about}
+              </button>
+              <button
+                onClick={() => handleTabChange('projects')}
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                  activeTab === 'projects'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.projects}
+              </button>
+              <button
+                onClick={() => handleTabChange('photography')}
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                  activeTab === 'photography'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.photography}
+              </button>
+              <button
+                onClick={() => handleTabChange('skills')}
+                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                  activeTab === 'skills'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.skills}
+              </button>
+              <div className={`pt-2 mt-2 border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} space-y-1`}>
+                <button
+                  onClick={() => {
+                    setLanguage('en');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                    language === 'en'
+                      ? isDarkMode
+                        ? 'bg-orange-500/10 text-orange-400'
+                        : 'bg-slate-100 text-slate-900'
+                      : isDarkMode
+                        ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    setLanguage('de');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left ${
+                    language === 'de'
+                      ? isDarkMode
+                        ? 'bg-orange-500/10 text-orange-400'
+                        : 'bg-slate-100 text-slate-900'
+                      : isDarkMode
+                        ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Deutsch
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
       {activeTab === 'home' && (
       <section id="home" className="relative pt-32 md:pt-60 pb-12 z-10 flex items-center justify-center px-6">
-        <div className="w-full max-w-[1250px] flex flex-col gap-8 relative">
+        <div className="w-full max-w-[725px] flex flex-col gap-8 relative">
           <div className="flex flex-col items-center text-center">
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -335,7 +477,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'about' && (
       <section id="about" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-        <div className="w-full max-w-[1250px] mx-auto">
+        <div className="w-full max-w-[725px] mx-auto">
           <div className="w-full">
             <div className="space-y-12 relative animate-fade-in">
               <div className={`absolute left-8 md:left-1/2 top-0 bottom-0 w-px ${isDarkMode ? 'bg-slate-800' : 'bg-slate-200'} md:transform md:-translate-x-1/2`}></div>
@@ -389,7 +531,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'projects' && !selectedProject && (
       <section id="projects" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-        <div className="w-full max-w-[1250px] mx-auto">
+        <div className="w-full max-w-[725px] mx-auto">
           <div className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
               {projects.map((project, index) => (
@@ -417,7 +559,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'projects' && selectedProject && (
         <section id="project-detail" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="w-full max-w-[1250px] mx-auto">
+          <div className="w-full max-w-[725px] mx-auto">
             <div className="w-full md:w-[80%] mx-auto">
               <button
                 onClick={handleBackToProjects}
@@ -496,7 +638,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'photography' && (
       <section id="photography" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-        <div className="w-full max-w-[1250px] mx-auto">
+        <div className="w-full max-w-[725px] mx-auto">
           <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[150px] gap-3 animate-fade-in">
               <div className="col-span-1 row-span-1 overflow-hidden rounded-xl group border border-slate-800 dark:border-slate-200">
@@ -602,7 +744,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'skills' && (
       <section id="skills" className={`relative pt-32 z-10 px-6 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-        <div className="w-full max-w-[1250px] mx-auto">
+        <div className="w-full max-w-[725px] mx-auto">
           <div className="w-full">
             <div className="flex flex-wrap gap-3 animate-fade-in">
               <span className={`px-4 py-2 ${isDarkMode ? 'bg-slate-900/50 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-xl border text-base font-medium transition-all cursor-default`}>React</span>
@@ -619,7 +761,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'privacy' && (
         <section id="privacy" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="w-full max-w-[1250px] mx-auto">
+          <div className="w-full max-w-[725px] mx-auto">
             <button
               onClick={() => handleTabChange('about')}
               className={`mb-12 ${isDarkMode ? 'text-orange-400 hover:text-orange-300' : 'text-slate-700 hover:text-slate-900'} transition-all duration-200 flex items-center gap-2 group hover:scale-105`}
@@ -674,7 +816,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
 
       {activeTab === 'terms' && (
         <section id="terms" className={`relative z-10 px-6 pt-32 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="w-full max-w-[1250px] mx-auto">
+          <div className="w-full max-w-[725px] mx-auto">
             <button
               onClick={() => handleTabChange('about')}
               className={`mb-12 ${isDarkMode ? 'text-orange-400 hover:text-orange-300' : 'text-slate-700 hover:text-slate-900'} transition-all duration-200 flex items-center gap-2 group hover:scale-105`}
@@ -728,7 +870,7 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
       )}
 
       <footer className="relative z-10 mt-24 pb-12 px-6">
-        <div className="w-full max-w-[1250px] mx-auto">
+        <div className="w-full max-w-[725px] mx-auto">
           <div className={`border-t ${isDarkMode ? 'border-slate-800' : 'border-slate-200'} pt-8`}>
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm`}>
