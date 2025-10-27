@@ -4,7 +4,7 @@ import { TranslationProvider, useTranslation } from './hooks/useTranslation';
 
 function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { language: 'en' | 'de', setLanguage: (lang: 'en' | 'de') => void, isDarkMode: boolean, setIsDarkMode: (value: boolean) => void }) {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('home');
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
@@ -84,6 +84,20 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         <div className={`w-full md:w-auto max-w-[1250px] ${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
           <div className="flex flex-wrap items-center justify-between gap-2 p-2">
             <div className="flex flex-wrap gap-1">
+              <button
+                onClick={() => handleTabChange('home')}
+                className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
+                  activeTab === 'home'
+                    ? isDarkMode
+                      ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                    : isDarkMode
+                      ? 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                }`}
+              >
+                {t.tabs.home}
+              </button>
               <button
                 onClick={() => handleTabChange('about')}
                 className={`px-4 py-2 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl ${
@@ -194,8 +208,8 @@ function AppContent({ language, setLanguage, isDarkMode, setIsDarkMode }: { lang
         </div>
       </nav>
 
-      {(activeTab === 'about' || (activeTab === 'projects' && !selectedProject) || activeTab === 'photography' || activeTab === 'skills') && (
-      <section id="hero" className="relative pt-32 md:pt-60 pb-12 z-10 flex items-center justify-center px-6">
+      {activeTab === 'home' && (
+      <section id="home" className="relative pt-32 md:pt-60 pb-12 z-10 flex items-center justify-center px-6">
         <div className="w-full max-w-[1250px] flex flex-col gap-8 relative">
           <div className="flex flex-col items-center text-center">
             <div className="flex justify-center mb-6">

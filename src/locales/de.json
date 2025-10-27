@@ -12,6 +12,7 @@
     "terms": "Nutzungsbedingungen"
   },
   "tabs": {
+    "home": "home.tsx",
     "about": "über.tsx",
     "projects": "projekte.tsx",
     "photography": "fotografie.tsx",
