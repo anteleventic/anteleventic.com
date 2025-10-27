@@ -61,7 +61,7 @@ export default function Layout({ children, language, setLanguage, isDarkMode, se
         <div className={`absolute top-[60%] left-[15%] w-[350px] h-px ${isDarkMode ? 'bg-gradient-to-r from-transparent via-orange-500/20 to-transparent' : 'bg-gradient-to-r from-transparent via-slate-300/60 to-transparent'} -rotate-12`}></div>
       </div>
 
-      <nav className="fixed top-6 left-6 right-6 z-50 flex justify-start">
+      <nav className="fixed top-6 left-6 right-6 z-50 flex justify-center">
         <div className={`${isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'} backdrop-blur-xl border rounded-2xl shadow-2xl transition-all duration-300`}>
           <div className="flex items-center gap-2 p-2">
             <div className="hidden md:flex gap-1">
