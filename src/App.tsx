@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TranslationProvider } from "./hooks/useTranslation";
 import Layout from "./components/Layout";
@@ -25,14 +25,35 @@ function App() {
 
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
+
         if (savedTheme) {
-            return savedTheme === "dark";
+        return savedTheme === "dark";
         }
-        const prefersDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-        ).matches;
+
+        // Determine system preference
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         return prefersDark;
     });
+
+    useEffect(() => {
+        const root = document.documentElement;
+
+        if (isDarkMode) {
+            root.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            root.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        }
+    }, [isDarkMode]);
+
+    useEffect(() => {
+        setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }, []);
+
+    const toggleTheme = () => {
+        setIsDarkMode(!isDarkMode);
+    };
 
     return (
         <BrowserRouter>
@@ -41,7 +62,7 @@ function App() {
                     language={language}
                     setLanguage={setLanguage}
                     isDarkMode={isDarkMode}
-                    setIsDarkMode={setIsDarkMode}
+                    toggleTheme={toggleTheme}
                 >
                     <Routes>
                         <Route
