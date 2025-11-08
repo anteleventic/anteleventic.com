@@ -1,140 +1,140 @@
 {
-  "name": "Ante Leventic",
-  "role": "Full-Stack-Entwickler",
-  "hero": {
-    "description": "Wenn ich nicht gerade programmiere, die KI-Welt erkunde oder vibes codend an meinem nächsten \"passiven\" App-Projekt arbeite, bin ich wahrscheinlich mit einer Kamera unterwegs und versuche wie ein Profi-Fotograf auszusehen—oder auf meinem Motorrad, auf der Jagd nach der besten Todeskurve.",
-    "yearsExperience": "Jahre Erfahrung",
-    "projects": "Projekte"
-  },
-  "footer": {
-    "copyright": "© 2024 Ante Leventic. Alle Rechte vorbehalten.",
-    "privacy": "Datenschutz",
-    "terms": "Nutzungsbedingungen"
-  },
-  "tabs": {
-    "home": "home.tsx",
-    "about": "über.tsx",
-    "projects": "projekte.tsx",
-    "photography": "fotografie.tsx",
-    "skills": "fähigkeiten.tsx"
-  },
-  "about": {
-    "title": "Über mich",
-    "content": "Ich bin ein leidenschaftlicher Full-Stack-Entwickler mit Expertise in modernen Webtechnologien. Ich liebe es, schöne, funktionale Anwendungen zu erstellen, die reale Probleme lösen. Mit jahrelanger Erfahrung in Frontend- und Backend-Entwicklung erwecke ich Ideen durch sauberen Code und intuitives Design zum Leben.",
-    "timeline": [
-      {
-        "period": "2024 - Heute",
-        "title": "Senior Full-Stack-Entwickler & KI-Spezialist",
-        "company": "Freiberuflich",
-        "description": "Leitung der Entwicklung innovativer KI-gestützter Anwendungen und Weblösungen. Spezialisierung auf React, TypeScript und maschinelles Lernen für Unternehmenskunden."
-      },
-      {
-        "period": "2020 - 2024",
-        "title": "Leitender Frontend-Entwickler",
-        "company": "Tech Innovations Inc.",
-        "description": "Architektur und Aufbau skalierbarer Webanwendungen für Millionen von Nutzern. Leitung eines Teams von 5 Entwicklern bei der Bereitstellung hochperformanter React-Anwendungen."
-      },
-      {
-        "period": "2017 - 2020",
-        "title": "Full-Stack-Entwickler",
-        "company": "Digital Solutions Ltd.",
-        "description": "Entwicklung von End-to-End-Webanwendungen mit modernen JavaScript-Frameworks. Zusammenarbeit mit Design-Teams zur Schaffung intuitiver Benutzererlebnisse."
-      },
-      {
-        "period": "2015 - 2017",
-        "title": "Junior Webentwickler",
-        "company": "StartUp Labs",
-        "description": "Mitarbeit an verschiedenen Webentwicklungsprojekten, praktische Erfahrung mit HTML, CSS, JavaScript und grundlegenden Backend-Technologien."
-      }
-    ]
-  },
-  "projects": {
-    "title": "Meine Projekte",
-    "viewDetails": "Details anzeigen",
-    "backToProjects": "Zurück zu Projekten",
-    "keyFeatures": "Hauptfunktionen",
-    "viewOnGithub": "Auf GitHub anzeigen",
-    "viewLive": "Live-Demo anzeigen",
-    "items": [
-      {
-        "title": "KI-Aufgabenmanager",
-        "description": "Intelligentes Aufgabenverwaltungssystem mit maschinellen Lernalgorithmen zur automatischen Priorisierung.",
-        "longDescription": "Eine umfassende Aufgabenverwaltungsplattform, die fortschrittliche maschinelle Lernalgorithmen verwendet, um Aufgaben automatisch nach Fristen, Wichtigkeit und Nutzerverhaltensmustern zu priorisieren. Funktionen umfassen intelligente Benachrichtigungen, kollaborative Arbeitsbereiche und detaillierte Analysen.",
-        "features": [
-          "Intelligente Aufgabenpriorisierung",
-          "Kollaborative Arbeitsbereiche",
-          "Echtzeit-Benachrichtigungen",
-          "Analyse-Dashboard"
-        ]
-      },
-      {
-        "title": "Portfolio-Generator",
-        "description": "Erstelle in wenigen Minuten beeindruckende Portfolio-Websites mit anpassbaren Vorlagen und Drag-and-Drop-Oberfläche.",
-        "longDescription": "Ein intuitiver Portfolio-Builder, der es Kreativen ermöglicht, schöne, responsive Portfolio-Websites ohne Code zu erstellen. Bietet eine Drag-and-Drop-Oberfläche, anpassbare Vorlagen und automatische Optimierung für alle Geräte.",
-        "features": [
-          "Drag-and-Drop-Builder",
-          "Responsive Vorlagen",
-          "Eigene Domains",
-          "SEO-Optimierung"
-        ]
-      },
-      {
-        "title": "Social-Analytics-Dashboard",
-        "description": "Echtzeit-Social-Media-Analyseplattform mit umfassenden Einblicken und automatisierten Berichten.",
-        "longDescription": "Eine leistungsstarke Analyseplattform, die Echtzeit-Einblicke in die Social-Media-Performance über mehrere Plattformen hinweg bietet. Umfasst automatisierte Berichterstattung, Zielgruppenanalyse und Engagement-Tracking.",
-        "features": [
-          "Multi-Plattform-Integration",
-          "Echtzeit-Analysen",
-          "Automatisierte Berichte",
-          "Zielgruppen-Einblicke"
-        ]
-      },
-      {
-        "title": "E-Commerce-Plattform",
-        "description": "Voll ausgestattete Online-Shopping-Plattform mit Zahlungsintegration und Lagerverwaltung.",
-        "longDescription": "Eine vollständige E-Commerce-Lösung mit sicherer Zahlungsabwicklung, Lagerverwaltung und Kundenbeziehungs-Tools. Entwickelt für Skalierbarkeit und Leistung mit modernen Webtechnologien.",
-        "features": [
-          "Sichere Zahlungen",
-          "Lagerverwaltung",
-          "Kundenportal",
-          "Bestellverfolgung"
-        ]
-      }
-    ]
-  },
-  "photography": {
-    "title": "Fotografie",
-    "subtitle": "Momente durch die Linse einfangen"
-  },
-  "skills": {
-    "title": "Technische Fähigkeiten",
-    "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "tools": "Werkzeuge & Sonstiges"
+    "name": "Ante Leventic",
+    "hero": {
+        "description": "Wenn ich nicht gerade programmiere, die KI-Welt erkunde oder vibes codend an meinem nächsten \"passiven\" App-Projekt arbeite, bin ich wahrscheinlich mit einer Kamera unterwegs und versuche wie ein Profi-Fotograf auszusehen—oder auf meinem Motorrad, auf der Jagd nach der besten Todeskurve.",
+        "yearsExperience": "Jahre Erfahrung",
+        "projects": "Projekte"
     },
-    "items": {
-      "frontend": [
-        "React & Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Vue.js",
-        "HTML5 & CSS3"
-      ],
-      "backend": [
-        "Node.js",
-        "Python",
-        "PostgreSQL",
-        "MongoDB",
-        "REST APIs"
-      ],
-      "tools": [
-        "Git & GitHub",
-        "Docker",
-        "VS Code",
-        "Figma",
-        "Agile/Scrum"
-      ]
+    "footer": {
+        "copyright": "© {currentYear} Ante Leventic. Alle Rechte vorbehalten."
+    },
+    "menu": {
+        "home": "home.tsx",
+        "about": "über.tsx",
+        "projects": "projekte.tsx",
+        "skills": "fähigkeiten.tsx"
+    },
+    "about": {
+        "timeline": [
+            {
+                "period": "2024 - Heute",
+                "title": "Senior Full-Stack-Entwickler & KI-Spezialist",
+                "company": "Freiberuflich",
+                "description": "Leitung der Entwicklung innovativer KI-gestützter Anwendungen und Weblösungen. Spezialisierung auf React, TypeScript und maschinelles Lernen für Unternehmenskunden."
+            },
+            {
+                "period": "2020 - 2024",
+                "title": "Leitender Frontend-Entwickler",
+                "company": "Tech Innovations Inc.",
+                "description": "Architektur und Aufbau skalierbarer Webanwendungen für Millionen von Nutzern. Leitung eines Teams von 5 Entwicklern bei der Bereitstellung hochperformanter React-Anwendungen."
+            },
+            {
+                "period": "2017 - 2020",
+                "title": "Full-Stack-Entwickler",
+                "company": "Digital Solutions Ltd.",
+                "description": "Entwicklung von End-to-End-Webanwendungen mit modernen JavaScript-Frameworks. Zusammenarbeit mit Design-Teams zur Schaffung intuitiver Benutzererlebnisse."
+            },
+            {
+                "period": "2015 - 2017",
+                "title": "Junior Webentwickler",
+                "company": "StartUp Labs",
+                "description": "Mitarbeit an verschiedenen Webentwicklungsprojekten, praktische Erfahrung mit HTML, CSS, JavaScript und grundlegenden Backend-Technologien."
+            },
+            {
+                "period": "2013 - 2016",
+                "title": "Simple Machines Forum Entwickler",
+                "company": "Freiberuflich",
+                "skills": ["PHP", "HTML", "CSS", "JavaScript", "MySQL", "FTP"]
+            }
+        ]
+    },
+    "projects": {
+        "title": "Meine Projekte",
+        "viewDetails": "Details anzeigen",
+        "backToProjects": "Zurück zu Projekten",
+        "keyFeatures": "Hauptfunktionen",
+        "viewOnGithub": "Auf GitHub anzeigen",
+        "viewLive": "Live-Demo anzeigen",
+        "items": [
+            {
+                "title": "KI-Aufgabenmanager",
+                "description": "Intelligentes Aufgabenverwaltungssystem mit maschinellen Lernalgorithmen zur automatischen Priorisierung.",
+                "longDescription": "Eine umfassende Aufgabenverwaltungsplattform, die fortschrittliche maschinelle Lernalgorithmen verwendet, um Aufgaben automatisch nach Fristen, Wichtigkeit und Nutzerverhaltensmustern zu priorisieren. Funktionen umfassen intelligente Benachrichtigungen, kollaborative Arbeitsbereiche und detaillierte Analysen.",
+                "features": [
+                    "Intelligente Aufgabenpriorisierung",
+                    "Kollaborative Arbeitsbereiche",
+                    "Echtzeit-Benachrichtigungen",
+                    "Analyse-Dashboard"
+                ]
+            },
+            {
+                "title": "Portfolio-Generator",
+                "description": "Erstelle in wenigen Minuten beeindruckende Portfolio-Websites mit anpassbaren Vorlagen und Drag-and-Drop-Oberfläche.",
+                "longDescription": "Ein intuitiver Portfolio-Builder, der es Kreativen ermöglicht, schöne, responsive Portfolio-Websites ohne Code zu erstellen. Bietet eine Drag-and-Drop-Oberfläche, anpassbare Vorlagen und automatische Optimierung für alle Geräte.",
+                "features": [
+                    "Drag-and-Drop-Builder",
+                    "Responsive Vorlagen",
+                    "Eigene Domains",
+                    "SEO-Optimierung"
+                ]
+            },
+            {
+                "title": "Social-Analytics-Dashboard",
+                "description": "Echtzeit-Social-Media-Analyseplattform mit umfassenden Einblicken und automatisierten Berichten.",
+                "longDescription": "Eine leistungsstarke Analyseplattform, die Echtzeit-Einblicke in die Social-Media-Performance über mehrere Plattformen hinweg bietet. Umfasst automatisierte Berichterstattung, Zielgruppenanalyse und Engagement-Tracking.",
+                "features": [
+                    "Multi-Plattform-Integration",
+                    "Echtzeit-Analysen",
+                    "Automatisierte Berichte",
+                    "Zielgruppen-Einblicke"
+                ]
+            },
+            {
+                "title": "E-Commerce-Plattform",
+                "description": "Voll ausgestattete Online-Shopping-Plattform mit Zahlungsintegration und Lagerverwaltung.",
+                "longDescription": "Eine vollständige E-Commerce-Lösung mit sicherer Zahlungsabwicklung, Lagerverwaltung und Kundenbeziehungs-Tools. Entwickelt für Skalierbarkeit und Leistung mit modernen Webtechnologien.",
+                "features": [
+                    "Sichere Zahlungen",
+                    "Lagerverwaltung",
+                    "Kundenportal",
+                    "Bestellverfolgung"
+                ]
+            }
+        ]
+    },
+    "photography": {
+        "title": "Fotografie",
+        "subtitle": "Momente durch die Linse einfangen"
+    },
+    "skills": {
+        "title": "Technische Fähigkeiten",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "tools": "Werkzeuge & Sonstiges"
+        },
+        "items": {
+            "frontend": [
+                "React & Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "Vue.js",
+                "HTML5 & CSS3"
+            ],
+            "backend": [
+                "Node.js",
+                "Python",
+                "PostgreSQL",
+                "MongoDB",
+                "REST APIs"
+            ],
+            "tools": [
+                "Git & GitHub",
+                "Docker",
+                "VS Code",
+                "Figma",
+                "Agile/Scrum"
+            ]
+        }
     }
-  }
 }
