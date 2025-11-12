@@ -33,13 +33,13 @@ export default function Home({ isDarkMode }: { isDarkMode: boolean }) {
                         </div>
                         <div className="flex items-center gap-2">
                             <div className="relative flex items-center justify-center">
-                                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                                <div className="absolute w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                                <div className={`w-2 h-2 ${t.isAvailableForWork ? 'bg-green-400' : 'bg-red-400'} rounded-full`}></div>
+                                <div className={`absolute w-2 h-2 ${t.isAvailableForWork ? 'bg-green-400' : 'bg-red-400'} rounded-full animate-ping`}></div>
                             </div>
                             <span
                                 className={`${isDarkMode ? "text-slate-400" : "text-slate-600"} text-sm font-medium transition-colors duration-500`}
                             >
-                                available for freelance
+                                {t.isAvailableForWork ? t.availableForWorkLabel : t.notAvailableForWorkLabel}
                             </span>
                         </div>
                     </div>

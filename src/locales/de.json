@@ -1,5 +1,8 @@
 {
     "name": "Ante Leventic",
+    "isAvailableForWork": true,
+    "availableForWorkLabel": "Verfügbar als Freelancer",
+    "notAvailableForWorkLabel": "Ausgelastet",
     "hero": {
         "description": "Wenn ich nicht gerade programmiere, die KI-Welt erkunde oder vibes codend an meinem nächsten \"passiven\" App-Projekt arbeite, bin ich wahrscheinlich mit einer Kamera unterwegs und versuche wie ein Profi-Fotograf auszusehen—oder auf meinem Motorrad, auf der Jagd nach der besten Todeskurve.",
         "yearsExperience": "Jahre Erfahrung",
@@ -11,40 +14,65 @@
     "menu": {
         "home": "home.tsx",
         "about": "über.tsx",
-        "projects": "projekte.tsx",
-        "skills": "fähigkeiten.tsx"
+        "projects": "projekte.tsx"
     },
     "about": {
         "timeline": [
             {
-                "period": "2024 - Heute",
-                "title": "Senior Full-Stack-Entwickler & KI-Spezialist",
-                "company": "Freiberuflich",
-                "description": "Leitung der Entwicklung innovativer KI-gestützter Anwendungen und Weblösungen. Spezialisierung auf React, TypeScript und maschinelles Lernen für Unternehmenskunden."
+                "period": "2025 - heute",
+                "title": "Fullstack Software Entwickler",
+                "company": "FERCHAU GmbH",
+                "company-link": "https://www.ferchau.com/",
+                "skills": ["TYPO3", "NEOS", "React", "NextJS", "DEV Ops"]
             },
             {
-                "period": "2020 - 2024",
-                "title": "Leitender Frontend-Entwickler",
-                "company": "Tech Innovations Inc.",
-                "description": "Architektur und Aufbau skalierbarer Webanwendungen für Millionen von Nutzern. Leitung eines Teams von 5 Entwicklern bei der Bereitstellung hochperformanter React-Anwendungen."
+                "period": "2025 - heute",
+                "title": "Freiberufler",
+                "company": "",
+                "company-link": "https://www.anteleventic.com/",
+                "skills": ["TYPO3", "NEOS", "React", "NextJS", "DEV Ops", "Framer"]
             },
             {
-                "period": "2017 - 2020",
-                "title": "Full-Stack-Entwickler",
-                "company": "Digital Solutions Ltd.",
-                "description": "Entwicklung von End-to-End-Webanwendungen mit modernen JavaScript-Frameworks. Zusammenarbeit mit Design-Teams zur Schaffung intuitiver Benutzererlebnisse."
+                "period": "2021 - 2025",
+                "title": "TYPO3/NEOS Entwickler",
+                "company": "VERDURE GmbH",
+                "company-link": "https://www.verdure.de/",
+                "skills": ["TYPO3", "Backend", "Frontend", "NEOS", "Fusion", "JSX", "React", "Shopware", "Shopify", "Vue.js", "Node.Js", "NextJS", "Yarn", "CI/CD", "DDEV", "Docker", "VRT", "Codeception Tests", "Kanban", "Jira", "Confluence"]
             },
             {
-                "period": "2015 - 2017",
-                "title": "Junior Webentwickler",
-                "company": "StartUp Labs",
-                "description": "Mitarbeit an verschiedenen Webentwicklungsprojekten, praktische Erfahrung mit HTML, CSS, JavaScript und grundlegenden Backend-Technologien."
+                "period": "2019 - 2021",
+                "title": "TYPO3 Entwickler",
+                "company": "Schommer Media GmbH",
+                "company-link": "https://www.schommer-media.de/",
+                "skills": ["TYPO3", "Backend", "Frontend"]
+            },
+            {
+                "period": "2016 - 2019",
+                "title": "Ausbildung als Fachinformatiker - Anwendungsentwicklung",
+                "company": "Schommer Media GmbH",
+                "company-link": "https://www.schommer-media.de/",
+                "skills": ["PHP", "HTML", "CSS", "JavaScript", "jQuery", "S/-FTP", "TYPO3", "Fluid-Template", "Flux", "VHS", "Typoscript", "Git", "Shopware", "Twig", "Gulp", "npm", "yarn"]
+            },
+            {
+                "period": "2015",
+                "title": "Praktikum - Web Entwickler",
+                "company": "Schommer Media GmbH",
+                "company-link": "https://www.schommer-media.de/",
+                "skills": ["HTML", "Bootstrap CSS", "jQuery", "TYPO3"]
+            },
+            {
+                "period": "2014",
+                "title": "Praktikum - Web Entwickler",
+                "company": "imp@ct.media Gmbh",
+                "company-link": "https://www.impactmedia.de/",
+                "skills": ["HTML", "Bootstrap CSS", "jQuery", "Git"]
             },
             {
                 "period": "2013 - 2016",
-                "title": "Simple Machines Forum Entwickler",
-                "company": "Freiberuflich",
-                "skills": ["PHP", "HTML", "CSS", "JavaScript", "MySQL", "FTP"]
+                "title": "Web Entwickler",
+                "company": "Simple Machines Forum",
+                "company-link": "https://www.simplemachines.org/",
+                "skills": ["PHP", "HTML", "CSS", "JavaScript"]
             }
         ]
     },
@@ -55,86 +83,20 @@
         "keyFeatures": "Hauptfunktionen",
         "viewOnGithub": "Auf GitHub anzeigen",
         "viewLive": "Live-Demo anzeigen",
-        "items": [
-            {
-                "title": "KI-Aufgabenmanager",
-                "description": "Intelligentes Aufgabenverwaltungssystem mit maschinellen Lernalgorithmen zur automatischen Priorisierung.",
-                "longDescription": "Eine umfassende Aufgabenverwaltungsplattform, die fortschrittliche maschinelle Lernalgorithmen verwendet, um Aufgaben automatisch nach Fristen, Wichtigkeit und Nutzerverhaltensmustern zu priorisieren. Funktionen umfassen intelligente Benachrichtigungen, kollaborative Arbeitsbereiche und detaillierte Analysen.",
+        "items": [{
+                "title": "Tobias Messmer - Personal Trainer",
+                "description": "Migration Wordpress => TYPO3",
+                "longDescription": "Eine Website für einen Personal Trainer, die seine Dienstleistungen, Erfolgsgeschichten von Kunden und seinen einzigartigen Ansatz hervorhebt. Der Personal Trainer benötigte ein mehrstufiges Kontaktformular (z. B. Ziele → Fitnesslevel → Kontaktdaten), um die Lead-Conversion zu verbessern. Die Seite wurde SEO-optimiert mit relevanten Keywords, Meta-Tags, schneller Ladegeschwindigkeit und einem mobilfreundlichen Layout, um die Sichtbarkeit in Suchmaschinen und die Nutzererfahrung zu maximieren.",
                 "features": [
-                    "Intelligente Aufgabenpriorisierung",
-                    "Kollaborative Arbeitsbereiche",
-                    "Echtzeit-Benachrichtigungen",
-                    "Analyse-Dashboard"
-                ]
-            },
-            {
-                "title": "Portfolio-Generator",
-                "description": "Erstelle in wenigen Minuten beeindruckende Portfolio-Websites mit anpassbaren Vorlagen und Drag-and-Drop-Oberfläche.",
-                "longDescription": "Ein intuitiver Portfolio-Builder, der es Kreativen ermöglicht, schöne, responsive Portfolio-Websites ohne Code zu erstellen. Bietet eine Drag-and-Drop-Oberfläche, anpassbare Vorlagen und automatische Optimierung für alle Geräte.",
-                "features": [
-                    "Drag-and-Drop-Builder",
-                    "Responsive Vorlagen",
-                    "Eigene Domains",
-                    "SEO-Optimierung"
-                ]
-            },
-            {
-                "title": "Social-Analytics-Dashboard",
-                "description": "Echtzeit-Social-Media-Analyseplattform mit umfassenden Einblicken und automatisierten Berichten.",
-                "longDescription": "Eine leistungsstarke Analyseplattform, die Echtzeit-Einblicke in die Social-Media-Performance über mehrere Plattformen hinweg bietet. Umfasst automatisierte Berichterstattung, Zielgruppenanalyse und Engagement-Tracking.",
-                "features": [
-                    "Multi-Plattform-Integration",
-                    "Echtzeit-Analysen",
-                    "Automatisierte Berichte",
-                    "Zielgruppen-Einblicke"
-                ]
-            },
-            {
-                "title": "E-Commerce-Plattform",
-                "description": "Voll ausgestattete Online-Shopping-Plattform mit Zahlungsintegration und Lagerverwaltung.",
-                "longDescription": "Eine vollständige E-Commerce-Lösung mit sicherer Zahlungsabwicklung, Lagerverwaltung und Kundenbeziehungs-Tools. Entwickelt für Skalierbarkeit und Leistung mit modernen Webtechnologien.",
-                "features": [
-                    "Sichere Zahlungen",
-                    "Lagerverwaltung",
-                    "Kundenportal",
-                    "Bestellverfolgung"
-                ]
+                    "3 Seiten: Startseite, Kontaktseite und Formularseiten",
+                    "SEO-Optimierung",
+                    "Webdesign-Optimierung in Rot/Schwarz",
+                    "Mehrstufiges Formular"
+                ],
+                "skills": ["Wordpress", "TYPO3", "Backend", "Frontend", "DDEV"],
+                "link": "https://tobias-messmer.de/",
+                "github": ""
             }
         ]
-    },
-    "photography": {
-        "title": "Fotografie",
-        "subtitle": "Momente durch die Linse einfangen"
-    },
-    "skills": {
-        "title": "Technische Fähigkeiten",
-        "categories": {
-            "frontend": "Frontend",
-            "backend": "Backend",
-            "tools": "Werkzeuge & Sonstiges"
-        },
-        "items": {
-            "frontend": [
-                "React & Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "Vue.js",
-                "HTML5 & CSS3"
-            ],
-            "backend": [
-                "Node.js",
-                "Python",
-                "PostgreSQL",
-                "MongoDB",
-                "REST APIs"
-            ],
-            "tools": [
-                "Git & GitHub",
-                "Docker",
-                "VS Code",
-                "Figma",
-                "Agile/Scrum"
-            ]
-        }
     }
 }

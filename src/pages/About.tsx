@@ -22,8 +22,22 @@ export default function About({ isDarkMode }: { isDarkMode: boolean }) {
                     <div className="hidden md:block flex-1 pb-8 text-right pr-12">
                       <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm mb-2 font-medium`}>{item.period}</div>
                       <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{item.title}</h3>
-                      <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-2`}>{item.company}</p>
-                      <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}>{item.description}</p>
+                      <a className={`transition-all duration-300 mb-2 block -mt-1 text-xs ${isDarkMode ? 'text-orange-400 hover:text-orange-700' : 'text-slate-900 hover:text-slate-400'}`} href={item['company-link']}>
+                        {item.company}
+                      </a>
+                      <div className="flex flex-wrap gap-1 animate-fade-in justify-end">
+                        {item?.skills?.map((item) => {
+                          return (
+                            <span className={`px-2 py-0.25 leading-1 text-[10px] 
+                              ${isDarkMode ? 
+                                'bg-slate-900/50 border-slate-800 text-white' :
+                                'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-md border text-base font-medium transition-all cursor-default
+                              `}>
+                              {item.toUpperCase()}
+                            </span>
+                          )
+                        })}
+                      </div>
                     </div>
                   )}
                   {!isLeft && <div className="hidden md:block flex-1 pb-8"></div>}
@@ -35,16 +49,44 @@ export default function About({ isDarkMode }: { isDarkMode: boolean }) {
                       <div className="md:hidden">
                         <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm mb-2 font-medium`}>{item.period}</div>
                         <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{item.title}</h3>
-                        <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-2`}>{item.company}</p>
-                        <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}>{item.description}</p>
+                        <a className={`transition-all duration-300 mb-2 block -mt-1 text-xs ${isDarkMode ? 'text-orange-400 hover:text-orange-700' : 'text-slate-900 hover:text-slate-400'}`} href={item['company-link']}>
+                          {item.company}
+                        </a>
+                        <div className="flex flex-wrap gap-1 animate-fade-in">
+                          {item?.skills?.map((item) => {
+                            return (
+                              <span className={`px-2 py-0.25 leading-1 text-[10px] 
+                                ${isDarkMode ? 
+                                  'bg-slate-900/50 border-slate-800 text-white' :
+                                  'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-md border text-base font-medium transition-all cursor-default
+                                `}>
+                                {item.toUpperCase()}
+                              </span>
+                            )
+                          })}
+                        </div>
                       </div>
                     )}
                     {!isLeft && (
                       <div>
                         <div className={`${isDarkMode ? 'text-slate-500' : 'text-slate-500'} text-sm mb-2 font-medium`}>{item.period}</div>
                         <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{item.title}</h3>
-                        <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-2`}>{item.company}</p>
-                        <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} leading-relaxed`}>{item.description}</p>
+                        <a className={`transition-all duration-300 mb-2 block -mt-1 text-xs ${isDarkMode ? 'text-orange-400 hover:text-orange-700' : 'text-slate-900 hover:text-slate-400'}`} href={item['company-link']}>
+                          {item.company}
+                        </a>
+                        <div className="flex flex-wrap gap-1 animate-fade-in">
+                          {item?.skills?.map((item) => {
+                            return (
+                              <span className={`px-2 py-0.25 leading-1 text-[10px] 
+                                ${isDarkMode ? 
+                                  'bg-slate-900/50 border-slate-800 text-white' :
+                                  'bg-white border-slate-200 text-slate-800'} backdrop-blur-sm rounded-md border text-base font-medium transition-all cursor-default
+                                `}>
+                                {item.toUpperCase()}
+                              </span>
+                            )
+                          })}
+                        </div>
                       </div>
                     )}
                   </div>

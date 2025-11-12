@@ -151,21 +151,6 @@ export default function Layout({
                             >
                                 <PencilRuler size={18} strokeWidth={1.5} />
                             </button>
-                            <button
-                                onClick={() => navigate("/skills")}
-                                className={`p-2.5 transition-all duration-200 rounded-xl ${
-                                    activeTab === "skills"
-                                        ? isDarkMode
-                                            ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                                            : "bg-slate-900 text-white shadow-lg shadow-slate-900/20"
-                                        : isDarkMode
-                                          ? "text-slate-400 hover:text-white hover:bg-slate-800/50"
-                                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                                }`}
-                                aria-label="Skills"
-                            >
-                                <Code size={18} strokeWidth={1.5} />
-                            </button>
                         </div>
 
                         <div
@@ -373,21 +358,6 @@ export default function Layout({
                             >
                                 <PencilRuler size={16} strokeWidth={1.5} />
                                 {t.menu.projects}
-                            </button>
-                            <button
-                                onClick={() => navigate("/skills")}
-                                className={`w-full px-4 py-2.5 text-xs font-semibold tracking-wide uppercase transition-all duration-200 rounded-xl text-left flex items-center gap-3 ${
-                                    activeTab === "skills"
-                                        ? isDarkMode
-                                            ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                                            : "bg-slate-900 text-white shadow-lg shadow-slate-900/20"
-                                        : isDarkMode
-                                          ? "text-slate-400 hover:text-white hover:bg-slate-800/50"
-                                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                                }`}
-                            >
-                                <Code size={16} strokeWidth={1.5} />
-                                {t.menu.skills}
                             </button>
                         </div>
                     </div>
