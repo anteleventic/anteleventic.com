@@ -61,10 +61,6 @@ function App() {
                             element={<ProjectDetail isDarkMode={isDarkMode} />}
                         />
                         <Route
-                            path="/skills"
-                            element={<Skills isDarkMode={isDarkMode} />}
-                        />
-                        <Route
                             path="/privacy"
                             element={<Privacy isDarkMode={isDarkMode} />}
                         />

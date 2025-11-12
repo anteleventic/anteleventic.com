@@ -9,10 +9,7 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
     id: index + 1,
     title: project.title,
     description: project.description,
-    tags: index === 0 ? ['React', 'Python', 'TensorFlow'] :
-          index === 1 ? ['Next.js', 'TypeScript', 'Tailwind'] :
-          index === 2 ? ['Vue.js', 'Node.js', 'MongoDB'] :
-          ['React', 'Stripe', 'PostgreSQL'],
+    skills: project.skills
   }));
 
   return (
@@ -30,11 +27,14 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
                 <h3 className={`${isDarkMode ? 'text-white' : 'text-slate-900'} text-xl font-semibold mb-2`}>{project.title}</h3>
                 <p className={`${isDarkMode ? 'text-slate-400' : 'text-slate-600'} text-sm mb-4`}>{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, index) => (
-                    <span key={index} className={`px-2.5 py-1 ${isDarkMode ? 'bg-orange-500/10 text-orange-400' : 'bg-slate-100 text-slate-700'} rounded-lg text-xs font-medium`}>{tag}</span>
+                  {project.skills.map((skill, index) => (
+                    <span key={index}  className={`px-2 py-0.25 leading-1 text-[10px] 
+                      ${isDarkMode ? 
+                        'bg-orange-900/50 border-orange-800 text-white' :
+                        'bg-slate-900 border-slate-200 text-white'} backdrop-blur-sm rounded-md border text-base font-medium transition-all cursor-default
+                      `}>{skill}</span>
                   ))}
                 </div>
-                <div className={`${isDarkMode ? 'text-orange-400 hover:text-orange-300' : 'text-slate-700 hover:text-slate-900'} text-sm transition-colors font-medium`}>View Project →</div>
               </div>
             ))}
           </div>

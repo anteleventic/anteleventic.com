@@ -4,7 +4,7 @@
     "availableForWorkLabel": "Verfügbar als Freelancer",
     "notAvailableForWorkLabel": "Ausgelastet",
     "hero": {
-        "description": "Wenn ich nicht gerade programmiere, die KI-Welt erkunde oder vibes codend an meinem nächsten \"passiven\" App-Projekt arbeite, bin ich wahrscheinlich mit einer Kamera unterwegs und versuche wie ein Profi-Fotograf auszusehen—oder auf meinem Motorrad, auf der Jagd nach der besten Todeskurve.",
+        "description": "Wenn ich nicht gerade programmiere, die KI-Welt erkunde oder an meinem nächsten \"passiven\" App arbeite, bin ich wahrscheinlich mit einer Kamera unterwegs und versuche wie ein Profi-Fotograf auszusehen — oder auf meinem Motorrad, auf der Jagd nach der besten Todeskurve.",
         "yearsExperience": "Jahre Erfahrung",
         "projects": "Projekte"
     },
@@ -77,10 +77,9 @@
         ]
     },
     "projects": {
-        "title": "Meine Projekte",
-        "viewDetails": "Details anzeigen",
-        "backToProjects": "Zurück zu Projekten",
+        "backToProjects": "Zurück zu Übersicht",
         "keyFeatures": "Hauptfunktionen",
+        "skills": "Fähigkeiten",
         "viewOnGithub": "Auf GitHub anzeigen",
         "viewLive": "Live-Demo anzeigen",
         "items": [{
@@ -93,9 +92,32 @@
                     "Webdesign-Optimierung in Rot/Schwarz",
                     "Mehrstufiges Formular"
                 ],
-                "skills": ["Wordpress", "TYPO3", "Backend", "Frontend", "DDEV"],
+                "logos": [{
+                    "dark": "tm/logo-dark.png",
+                    "light": "tm/logo-light.png"
+                }],
+                "images": ["tm/preview-1.png", "tm/preview-2.png", "tm/preview-3.png"],
+                "skills": ["Wordpress", "TYPO3", "Backend", "Frontend"],
                 "link": "https://tobias-messmer.de/",
                 "github": ""
+            },
+            {
+                "title": "TODO - Liste",
+                "description": "Erstes MERN-Projekt – Lernen der Grundlagen",
+                "longDescription": "Willkommen zu meiner MERN (MongoDB, Express.js, React, Node.js) Stack-Reise! 🚀 Lass uns zurückspulen zum Ursprung dieses Repositories – dem INIT-Commit. Doch dieser INIT war kein Neuanfang, sondern eher die Mitte meines Lernprozesses. Begleite mich, während ich die bisher ungeschriebenen Kapitel meiner Coding-Reise offenlege und dokumentiere.",
+                "features": [
+                    "CRUD-Operationen (Erstellen, Lesen, Aktualisieren, Löschen)",
+                    "Einfache Liste mit Titeln",
+                    "MongoDB-Integration, Dockerisierte Datenbank & Cloud-Deployment"
+                ],
+                "logos": [{
+                    "dark": "tl/logo-dark.png",
+                    "light": "tl/logo-light.png"
+                }],
+                "images": ["tl/preview-1.png"],
+                "skills": ["React", "MongoDB", "Express.js", "Node.js", "npm"],
+                "link": "",
+                "github": "https://github.com/anteleventic/mern-learning-with-todo-list"
             }
         ]
     }

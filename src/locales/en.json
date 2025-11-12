@@ -77,10 +77,9 @@
         ]
     },
     "projects": {
-        "title": "My Projects",
-        "viewDetails": "View Details",
-        "backToProjects": "Back to Projects",
+        "backToProjects": "Back to Overview",
         "keyFeatures": "Key Features",
+        "skills": "Skills",
         "viewOnGithub": "View on GitHub",
         "viewLive": "View Live Demo",
         "items": [
@@ -94,9 +93,32 @@
                     "Web Design optimisation in red/black colors",
                     "Multi-Step Form"
                 ],
-                "skills": ["Wordpress", "TYPO3", "Backend", "Frontend", "DDEV"],
+                "logos": [{
+                    "dark": "tm/logo-dark.png",
+                    "light": "tm/logo-light.png"
+                }],
+                "images": ["tm/preview-1.png", "tm/preview-2.png", "tm/preview-3.png"],
+                "skills": ["Wordpress", "TYPO3", "Backend", "Frontend"],
                 "link": "https://tobias-messmer.de/",
                 "github": ""
+            },
+            {
+                "title": "TODO - List",
+                "description": "First MERN Project – Learning the fundamentals",
+                "longDescription": "Welcome to my MERN (MongoDB, Express.js, React, Node.js) Stack journey! 🚀 Let’s rewind to the origin of this repository — the INIT commit. But this INIT wasn’t a clean slate; it marked the midpoint of my learning curve. Join me as I document and share the previously unwritten chapters of my coding journey.",
+                "features": [
+                    "CRUD operations (Create, Read, Update, Delete)",
+                    "Simple list with titles",
+                    "MongoDB integration, Dockerized database & cloud deployment"
+                ],
+                "logos": [{
+                    "dark": "tl/logo-dark.png",
+                    "light": "tl/logo-light.png"
+                }],
+                "images": ["tl/preview-1.png"],
+                "skills": ["React", "MongoDB", "Express.js", "Node.js", "npm"],
+                "link": "",
+                "github": "https://github.com/anteleventic/mern-learning-with-todo-list"
             }
         ]
     }
